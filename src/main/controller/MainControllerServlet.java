@@ -118,23 +118,23 @@ public class MainControllerServlet extends HttpServlet {
 			
 			
 			System.out.println("command : " + command);
-			// /Day0915Board/command 로 반환을 하는데!!
+			// /RentalWebPage/command 로 반환을 하는데!!
 			// 이 부분으로만 각각의 명령을 처리하게 바꾸면 된다
 			// 즉!! URL부분을 각각의 명령에 따라 변경하면됨!
 			
 			System.out.println("contextPath : " + req.getContextPath());
-			// /Day0915Board 이부분
+			// /RentalWebPage 이부분
 			
 			
 			
 			// 프로젝트 주소를 잘라낼 것!
 			
-			// /Day0915Board (프로젝트명) 이 글자 통째로의 인덱스 값이 0일때
+			// /RentalWebPage (프로젝트명) 이 글자 통째로의 인덱스 값이 0일때
 			// 즉 이 프로젝트명의 통째값이 처음에 위치했을 때
 			if(command.indexOf(req.getContextPath()) == 0) {
 				command = command.substring(req.getContextPath().length());
 				// substring(시작 인덱스) -> 시작인덱스 뒤부터 ~ 끝까지를 문자열! 을 반환
-				// 즉 /Day0915Board의 길이만큼을 뺀 뒤에 문자열을 반환
+				// 즉 /RentalWebPage의 길이만큼을 뺀 뒤에 문자열을 반환
 				
 				// charAt(인덱스) → 해당 인덱스의 문자! 를 반환
 			}
