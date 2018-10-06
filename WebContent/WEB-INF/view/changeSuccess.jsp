@@ -9,6 +9,8 @@
 <body>
 회원정보를 변경했습니다
 
+<br>
+
 <a href="loginIndex.jsp">[메인화면으로 돌아가기]</a>
 
 </body>
