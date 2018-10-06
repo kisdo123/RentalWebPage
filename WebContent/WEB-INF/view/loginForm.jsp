@@ -10,7 +10,6 @@
 <body>
 
 <form action="login" method="post">
-<c:if test="${errors.idOrPwNotMatch }">아이디와 비밀번호가 맞지 않습니다</c:if>
 
 <p>
 	<input type="text" name="id" maxlength="20" value="${param.id }" placeholder="아이디">
@@ -22,6 +21,8 @@
 	<input type="password" name="pw" maxlength="20" value="${param.pw }" placeholder="비밀번호">
 	<c:if test="${errors.pw }">비밀번호를 입력하세요</c:if>
 </p>
+
+<c:if test="${errors.idOrPwNotMatch }">아이디와 비밀번호가 맞지 않습니다</c:if>
 
 <input type="submit" value="로그인">
 </form>
