@@ -9,7 +9,7 @@
 <body>
 ${param.name }님 회원 가입에 성공했습니다.
 
-<a href="loginIndex.jsp">[메인화면으로 돌아가기]</a>
+<a href="login">[로그인화면으로 돌아가기]</a>
 
 </body>
 </html>
