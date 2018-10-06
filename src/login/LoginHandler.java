@@ -110,7 +110,7 @@ public class LoginHandler implements CommandHandler{
 		
 			// 성공시 세션에 로그인한 사용자의 정보를 담음
 			req.getSession().setAttribute("loginUser", loginUser);			
-			resp.sendRedirect(req.getContextPath() + "/loginIndex.jsp");
+			resp.sendRedirect(req.getContextPath() + "/index.jsp");
 			
 			return null;
 		
