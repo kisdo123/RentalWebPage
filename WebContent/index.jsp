@@ -1,4 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,7 +63,15 @@
 				<div>공간 정보 나오는 곳</div>
 			</div>
 			<div style="border: 1px solid black;">
-				<jsp:include page="/WEB-INF/view/loginForm.jsp"></jsp:include>
+			
+				<c:if test="${empty loginUser.name }">
+					<jsp:include page="/WEB-INF/view/loginForm.jsp"/>
+				</c:if>
+			
+				<c:if test="${! empty loginUser.name }">				
+					<jsp:include page="/loginIndex.jsp"></jsp:include>
+				</c:if>
+				
 			</div>
 		</div>
 	</div>
