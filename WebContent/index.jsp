@@ -1,110 +1,75 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>공간대여</title>
+<meta charset="UTF-8">
+<title>Insert title here</title>
 <style type="text/css">
-	body {
-		background-color: #2E2E2E;
-	}
-	
-	li {
-		list-style: none;
-		display: inline-block;
+	body{
 		text-align: center;
-		width: 19.5%;
-		height: 30px;
+		background-color: background;
 	}
-	
-	a:link {
-		color: red;
-		text-decoration: none;
-	}
-	
-	a:visited {
-		color: black;
-		text-decoration: none;
-	}
-	
-	a:hover {
-		color: white;
-		text-decoration: underline;
-	}
-	
-	.logo {
+	.header{
 		text-align: center;
-		color: white;
-	}
-	
-	.menuBar {
-		border: 10px double gray;
-		border-radius: 5px;
-		margin: 0px;
-		padding: 0px;
-	}
-	
-	.menu {
-		display: inline-block;
 		width: 100%;
-		height: 30px;
-		margin-left: auto;
-		margin-right: auto;
-		border-radius: 5px;
+		height: 150px;
+		background-color: white;
 	}
-	
-	.menu:hover {
-		background-color: black;
-		color: white;
+	.inbody{
+		background-color: lightgreen;
+		border: 1px solid black;
+		width: 100%;
+		height: 700px;
+	}
+	.inbody_container{
+		display: inline-block;
+		float: left;
+		width: 49.78%;
+		height: 700px;
+		border: 1px solid blue;
+	}
+	.bottom{
+		background-color: white;
+		width: 100%;
+		height: 100px;
 	}
 </style>
-<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-<script>
-	$(document).ready(function(e) {
-		$('a').click(function() {
-			$('#view').attr('src', $(this).attr('data-url'));
-		})
-	});
-</script>
 </head>
 <body>
-	<!-- View 화면 -->
-	<div class="View">
-
-		<!-- 상단 로고 및 메뉴바 -->
-		<div class="head">
-
-			<!-- 상단 로고 -->
-			<div class="header">
-
-				<!-- 로고 -->
-				<h1 class="logo">
-					<a href="file:///C:/Users/KOITT-02-A/Desktop/index.html">PLACE
-						RENT</a>
-				</h1>
-			</div>
-
-			<!-- 메뉴바 -->
+<div class="indexView">
+	<div class="header">
+		<h1><a>대관</a></h1>
+	</div>
+	<div class="inbody">
+		<div class="inbody_container">
+			<h2>메뉴</h2>
+			<ul>
+				<li>대관</li>
+				<li>Q&A</li>
+				<li>기타</li>
+			</ul>
+		</div>
+		<div class="inbody_container">
 			<div>
-				<ul class="menuBar">
-					<li><a data-url="Test.jsp"> <span class="menu">own</span>
-					</a></li>
-					<li><a data-url="Test2.jsp"> <span class="menu">two</span>
-					</a></li>
-					<li><a data-url="Test3.jsp"> <span class="menu">three</span>
-					</a></li>
-					<li><a data-url="Test4.jsp"> <span class="menu">four</span>
-					</a></li>
-					<li><a data-url="Test5.jsp"> <span class="menu">five</span>
-					</a></li>
-				</ul>
+				<h1>대관 홈페이지입니다 환영합니다.</h1>
+				<button>공간 1</button>
+				<button>공간 2</button>
+				<button>공간 3</button>
+				<button>공간 4</button>
+				<button>공간 5</button>
+				<div>공간 정보 나오는 곳</div>
 			</div>
-
-			<!-- 창 바뀌는 곳 -->
-			<div>
-				<iframe id="view" width="99.5%" height="800" src="Test.jsp"></iframe>
+			<div style="border: 1px solid black;">
+				ID<input type="text" maxlength="20" placeholder="아디디"><br>
+				password<input type="password" maxlength="20" placeholder="비밀번호">
+				로그인 폼 넣는 곳
 			</div>
 		</div>
 	</div>
+	<div class="bottom">
+		<span>연락처 | 문의 | 대표전화 번호</span>
+	</div>
+</div>
 </body>
 </html>
