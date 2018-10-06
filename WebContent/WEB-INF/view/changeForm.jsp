@@ -34,7 +34,6 @@
 </p>
 
 <input type="submit" value="회원정보 변경">	
-<a href="/index.jsp">회원정보 변경 취소</a>
 
 </form>
 
