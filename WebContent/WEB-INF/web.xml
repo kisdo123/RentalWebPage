@@ -64,7 +64,7 @@
  		
  		<init-param>
  			<param-name>handlerConfigFile</param-name>
- 			<param-value>/WEB-INF/handlerConfig/commandHandler.properties</param-value>
+ 			<param-value>/WEB-INF/handlerConfig/mainHandler.properties</param-value>
  		</init-param>
  	</servlet>
 
