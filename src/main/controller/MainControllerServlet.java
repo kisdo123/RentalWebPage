@@ -180,7 +180,6 @@ public class MainControllerServlet extends HttpServlet {
 				// 결과 페이지로 전환시킴
 				RequestDispatcher dispatcher = req.getRequestDispatcher(viewPage);
 				dispatcher.forward(req, resp);
-				
 			}
 		}
 }
