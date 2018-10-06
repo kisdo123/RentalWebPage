@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,9 +60,7 @@
 				<div>공간 정보 나오는 곳</div>
 			</div>
 			<div style="border: 1px solid black;">
-				ID<input type="text" maxlength="20" placeholder="아디디"><br>
-				password<input type="password" maxlength="20" placeholder="비밀번호">
-				로그인 폼 넣는 곳
+				<jsp:include page="/WEB-INF/view/loginForm.jsp"></jsp:include>
 			</div>
 		</div>
 	</div>

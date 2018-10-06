@@ -16,7 +16,7 @@ import main.handler.CommandHandler;
 
 public class LoginHandler implements CommandHandler{
 
-	private static final String FORM_VIEW = "/WEB-INF/view/loginForm.jsp";
+	private static final String FORM_VIEW = "/index.jsp";
 	
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse resp) throws Exception {

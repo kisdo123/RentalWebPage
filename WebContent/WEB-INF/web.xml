@@ -71,9 +71,9 @@
  
  	<servlet-mapping>
  		<servlet-name>MainController</servlet-name>
- 		<url-pattern>/join</url-pattern>
  		<url-pattern>/login</url-pattern>
  		<url-pattern>/logout</url-pattern>
+ 		<url-pattern>/join</url-pattern>
  		<url-pattern>/changePw</url-pattern>
  		
  	</servlet-mapping>

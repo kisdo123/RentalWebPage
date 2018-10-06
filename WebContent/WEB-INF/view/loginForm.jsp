@@ -13,13 +13,13 @@
 <c:if test="${errors.idOrPwNotMatch }">아이디와 비밀번호가 맞지 않습니다</c:if>
 
 <p>
-	<input type="text" name="id" value="${param.id }" placeholder="아이디">
+	<input type="text" name="id" maxlength="20" value="${param.id }" placeholder="아이디">
 	<c:if test="${errors.id }">아이디를 입력하세요</c:if>
 	<c:if test="${errors.noid }">없는 ID(닉네임)입니다</c:if>
 </p>
 
 <p>
-	<input type="password" name="pw" value="${param.pw }" placeholder="비밀번호">
+	<input type="password" name="pw" maxlength="20" value="${param.pw }" placeholder="비밀번호">
 	<c:if test="${errors.pw }">비밀번호를 입력하세요</c:if>
 </p>
 
