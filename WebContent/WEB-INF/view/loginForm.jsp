@@ -25,6 +25,7 @@
 <c:if test="${errors.idOrPwNotMatch }">아이디와 비밀번호가 맞지 않습니다</c:if>
 
 <input type="submit" value="로그인">
+<a href="join">회원가입</a>
 </form>
 
 </body>
