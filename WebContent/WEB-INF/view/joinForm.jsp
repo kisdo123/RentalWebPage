@@ -14,7 +14,7 @@
 
 
 <form action="join" method="post">
-<table border="1px" width="650">
+<table>
 <!-- 여기서 파라미터값을 입력하면 param값은 JoinHandler에 processSubmit 메소드의 getParam..로 넘어간다  -->
 
 	<tr>
