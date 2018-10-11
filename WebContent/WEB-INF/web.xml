@@ -45,7 +45,7 @@
  		
  		<!-- 비밀번호를 변경할 때 로그인을 확인하는 필터 사용 -->
  		
- 		<url-pattern>/changePw</url-pattern>
+ 		<url-pattern>/change</url-pattern>
  		
  	</filter-mapping>
  
@@ -74,7 +74,7 @@
  		<url-pattern>/login</url-pattern>
  		<url-pattern>/logout</url-pattern>
  		<url-pattern>/join</url-pattern>
- 		<url-pattern>/changePw</url-pattern>
+ 		<url-pattern>/change</url-pattern>
  		
  	</servlet-mapping>
  

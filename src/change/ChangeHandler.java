@@ -85,6 +85,7 @@ public class ChangeHandler implements CommandHandler{
 		String team = req.getParameter("team");
 		
 
+		
 		// 각 데이터가 비어있으면 errors에 해당하는 이름의 변수를 put한다
 		if(name == null || name.isEmpty()) {
 			errors.put("name", true);
@@ -120,6 +121,7 @@ public class ChangeHandler implements CommandHandler{
 		try {
 			
 			ChangeService changeService = ChangeService.getInstance();
+			
 			changeService.ChangeUserInfo(loginUser.getId(), oldPw, newPw, name, phone, team);
 			
 			return "/WEB-INF/view/changeSuccess.jsp";		

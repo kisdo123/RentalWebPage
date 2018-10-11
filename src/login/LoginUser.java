@@ -7,13 +7,26 @@ public class LoginUser {
 
 	private int userId;
 	private String id;
+	private String pw;
 	private String name;
+	private String phone;
+	private String team;
+	private String birth;
 	
-	public LoginUser(int userId, String id, String name) {
+	
+	
+	public LoginUser(int userId, String id, String name, String pw, String phone, String team, String birth) {
 		this.userId = userId;
 		this.id = id;
 		this.name = name;
+		this.pw = pw;
+		this.phone = phone;
+		this.team = team;
+		this.birth = birth;
 	}
+
+	
+	
 
 	public int getUserId() {
 		return userId;
@@ -39,5 +52,36 @@ public class LoginUser {
 		this.name = name;
 	}
 	
+	public String getPw() {
+		return pw;
+	}
+
+	public void setPw(String pw) {
+		this.pw = pw;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getBirth() {
+		return birth;
+	}
+
+	public void setBirth(String birth) {
+		this.birth = birth;
+	}
+
+	public String getTeam() {
+		return team;
+	}
+
+	public void setTeam(String team) {
+		this.team = team;
+	}
 	
 }

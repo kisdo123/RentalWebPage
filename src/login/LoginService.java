@@ -58,10 +58,17 @@ public class LoginService {
 			}
 			
 
-			
-			
+				
 			// 사용자 인증 완료되었으니 auth객체를 반환
-			return new LoginUser(user.getUserId(), user.getId(), user.getName());
+			return new LoginUser(
+					user.getUserId(),
+					user.getId(),
+					user.getName(),
+					user.getPw(),
+					user.getPhone(),
+					user.getTeam(),
+					user.getBirth()
+					);
 		}
 		
 	}

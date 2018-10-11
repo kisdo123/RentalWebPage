@@ -11,7 +11,7 @@
 
 <c:if test="${! empty loginUser.name }">
 ${loginUser.name }님, 안녕하세요 <br><br>
- <a href="logout">[로그아웃하기]</a><a href="changePw">[회원정보 변경]</a>
+ <a href="logout">[로그아웃하기]</a><a href="UserInfo.jsp">[내 정보]</a>
 </c:if>
 
 <c:if test="${empty loginUser.name }">

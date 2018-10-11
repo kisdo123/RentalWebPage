@@ -14,6 +14,9 @@ public class User {
 	private String birth; // 생년월일
 	private LocalDateTime jdate; //가입날짜
 	
+	public User() {}
+	
+	
 	
 	// 생성자
 	// 하나는 DB에서 가져올 때 사용하는 생성자

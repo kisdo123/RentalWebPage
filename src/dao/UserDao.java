@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import dao.UserDao;
+import jdbc.ConnectionProvider;
 import join.User;
 
 public class UserDao {
@@ -84,7 +85,36 @@ public class UserDao {
 	
 	
 	
-	// 사용자 정보 수정
+	
+	// 아이디 중복 체크를 위한 SQL
+	public boolean confirmId(String id) throws SQLException {
+		
+		boolean result = false;
+		Connection conn = ConnectionProvider.getConnection();
+		
+		String sql = "SELECT * FROM rentproject.user WHERE id = ?";
+		
+		try(PreparedStatement pst = conn.prepareStatement(sql)){
+			
+			pst.setString(1, id);
+			
+			ResultSet rs = pst.executeQuery();
+			
+			if(rs.next()) {
+				result = true;
+			}
+		}
+		
+		return result;
+	}
+	
+	
+	
+	
+	
+	
+	
+	// 사용자 정보 수정 (쪼개야함)
 	public void updateUserInfo(Connection conn, User user) throws SQLException {
 			
 		String sql = "UPDATE rentproject.user SET name = ?, pw = ?, phone = ?, team = ? WHERE userId = ?";

@@ -68,6 +68,7 @@ public class LoginHandler implements CommandHandler{
 		String pw = ((req.getParameter("pw")==null)? null : req.getParameter("pw").trim());		
 		
 		
+		
 		Map<String, Boolean> errors = new HashMap<String, Boolean>();
 
 	
