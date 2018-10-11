@@ -12,7 +12,7 @@
 
 	function changeForm(val){
     	if(val == "1"){
-        	location.href="index.jsp";
+        	location.href="main.jsp";
     	}else if(val == "2"){
         	location.href="change";
     	}
@@ -65,7 +65,7 @@
         </table>
         <br>
         
-        <input type="button" value="뒤로" onclick="changeForm(1)">
+        <input type="button" value="메인으로" onclick="changeForm(1)">
         <input type="button" value="회원정보 변경" onclick="changeForm(2)">
 
 </body>

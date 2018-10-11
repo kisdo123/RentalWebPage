@@ -10,13 +10,13 @@
 <body>
 
 <c:if test="${! empty loginUser.name }">
-${loginUser.name }님, 안녕하세요 <br><br>
- <a href="logout">[로그아웃하기]</a><a href="UserInfo.jsp">[내 정보]</a>
+	<br>
+	${loginUser.name }님
+	<button type="button" onclick="location.href='UserInfo.jsp' ">마이페이지</button>
+	<button type="button" onclick="location.href='logout' ">로그아웃</button>
 </c:if>
 
 <c:if test="${empty loginUser.name }">
-${loginUser.name }님, 안녕하세요 <br><br>
-<a href="join">[회원가입하기]</a><a href="login">[로그인하기]</a>
 </c:if>
 
 </body>

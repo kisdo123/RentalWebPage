@@ -13,7 +13,7 @@ import main.handler.CommandHandler;
 
 public class LoginHandler implements CommandHandler{
 
-	private static final String FORM_VIEW = "/index.jsp";
+	private static final String FORM_VIEW = "/WEB-INF/view/loginPage.jsp";
 	
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse resp) throws Exception {
@@ -107,10 +107,8 @@ public class LoginHandler implements CommandHandler{
 			LoginUser loginUser = loginService.login(id, pw);
 		
 			// 성공시 세션에 로그인한 사용자의 정보를 담음
-			req.getSession().setAttribute("loginUser", loginUser);			
-			resp.sendRedirect(req.getContextPath() + "/index.jsp");
-			
-			return null;
+			req.getSession().setAttribute("loginUser", loginUser);
+			return "main.jsp";
 		
 		
 		}catch(LoginFailException e) {

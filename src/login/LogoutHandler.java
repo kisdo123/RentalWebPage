@@ -21,9 +21,7 @@ public class LogoutHandler implements CommandHandler{
 			session.invalidate();
 		}
 				
-		// 리다이렉트로 돌려줌
-		resp.sendRedirect(req.getContextPath() + "/index.jsp");
-		return null;
+		return "/WEB-INF/view/loginPage.jsp";
 	}
 	
 }

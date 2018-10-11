@@ -1,10 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta charset="UTF-8">
 <title>로그인 | 하자공간</title>
+
 <link
 	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 	rel="stylesheet"
@@ -12,6 +13,7 @@
 	crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300"
 	rel="stylesheet">
+	
 <style type="text/css">
 body {
 	margin: 0;
@@ -69,14 +71,14 @@ input {
 }
 
 .join {
-	border-top: 1px solid black;
+	background-color: black;
+	color: white;
 	font-size: small;
-	padding-top: 10px;
 }
 </style>
 </head>
 <body>
-	<form action="" method="post">
+	<form action="login" method="post">
 
 		<div class="outer-container">
 			<div class="inner-container">
@@ -87,35 +89,42 @@ input {
 					<table>
 						<tr>
 							<!-- 로그인 위에 이미지가 들어가는 자리 -->
-							<td><span class="logo"><img src="하자.png"></span></td>
+							<td><span class="logo"><img src="image/하자.png"></span></td>
 						</tr>
 						<tr>
 							<td>
-								<!-- 아이디가 입력되는 부분 --> <span class="id"> <input
-									type="text" name="id" placeholder="닉네임" maxlength="10">
-							</span>
+								<!-- 아이디가 입력되는 부분 --> <span class="id">
+								<input type="text" name="id" maxlength="10" value="${param.id }" placeholder="닉네임">
+								<c:if test="${errors.id }">
+									<script>alert("아이디를 입력하세요");</script>
+								</c:if>
+								<c:if test="${errors.noid }">
+									<script>alert("없는 ID(닉네임)입니다");</script>
+								</c:if>
+								</span>
 							</td>
 						</tr>
 						<tr>
-							<td><input type="password" name="pw"
-								placeholder="비밀번호 4자리이상, 12자리이하" minlength="4" maxlength="12">
+							<td>
+							<input type="password" name="pw" minlength="4" maxlength="12" value="${param.pw }" placeholder="비밀번호">
+							<c:if test="${errors.pw }">
+								<script>alert("비밀번호를 입력하세요");</script>
+							</c:if>
 							</td>
 						</tr>
 						<tr>
-							<td></td>
-						</tr>
-						<tr>
-							<td></td>
-						</tr>
-						<tr>
-							<td><input class="logbtn" type="button" value="로그인">
+							<td>
+							<c:if test="${errors.idOrPwNotMatch }">
+								<script>alert("아이디나 비밀번호가 맞지 않습니다");</script>
+							</c:if>
+							<input class="logbtn" type="submit" value="로그인">
 							</td>
 						</tr>
 						<tr>
 							<td><br></td>
 						</tr>
 						<tr>
-							<td><span class="join">회원가입</span></td>
+							<td><button type="button" class="join" onclick="location.href='join' ">회원가입</button></td>
 						</tr>
 
 

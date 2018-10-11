@@ -11,7 +11,7 @@
 
 <br>
 
-<a href="index.jsp">[메인화면으로 돌아가기]</a>
+<a href="main.jsp">[메인화면으로 돌아가기]</a>
 
 </body>
 </html>
