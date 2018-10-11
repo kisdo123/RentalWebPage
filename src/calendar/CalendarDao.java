@@ -43,6 +43,7 @@ public class CalendarDao {
 			}
 		}
 	
+	//delete쿼리
 	public int delete(Connection conn, int userId) throws SQLException{
 		String sql = "delete from rent where userId = ? ";
 		try(PreparedStatement pst = conn.prepareStatement(sql)){
@@ -50,7 +51,8 @@ public class CalendarDao {
 			return pst.executeUpdate();
 		}
 	}
-
+	
+	//RentInquiry 객체에 데이터 삽입
 	private RentInquiry rentInquiryElement(ResultSet rs) throws SQLException{
 		RentInquiry rentInquiry = new RentInquiry(rs.getInt("rentId"), rs.getInt("userId"), rs.getString("name"), rs.getInt("roomId"), rs.getString("roomName"), rs.getString("rentDate"), rs.getString("rentTime"));
 		return rentInquiry;

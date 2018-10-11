@@ -85,7 +85,6 @@ public class CalendarHandler implements CommandHandler {
 				break;
 			}
 		}
-		System.out.println(rentTime);
 		//객체생성
 		Calendar calendar = new Calendar();
 		
@@ -108,6 +107,7 @@ public class CalendarHandler implements CommandHandler {
 		} catch (UserNotFoundException e) {
 			e.printStackTrace();
 			return null;
+		//DuplicationException이면 rentApplicationFail화면을 반환한다.
 		} catch (DuplicationException e) {
 			return "/WEB-INF/fail/rentApplicationFail.jsp";
 		}

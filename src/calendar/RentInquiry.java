@@ -1,5 +1,6 @@
 package calendar;
 
+//조회를 하기위한 객체 생성
 public class RentInquiry {
 	private int rentId;
 	private int userId;

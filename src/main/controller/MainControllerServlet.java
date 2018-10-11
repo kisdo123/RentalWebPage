@@ -52,7 +52,7 @@ public class MainControllerServlet extends HttpServlet {
 		// getInitParameter("handlerConfigFile")를 통해 프로퍼티 파일의 위치값을 가져오고
 		// getRealPath를 통해 실제 시스템 경로를 가져옴
 		String confPath = getServletContext().getRealPath(getInitParameter("handlerConfigFile"));
-		System.out.println("시스템 프로퍼티 파일주소 : " + confPath);
+		//System.out.println("시스템 프로퍼티 파일주소 : " + confPath);
 		
 		
 		// 파일에서 프로퍼티 내용을 가져옴
@@ -61,10 +61,10 @@ public class MainControllerServlet extends HttpServlet {
 			prop.load(fr); // <String, String> -> <명령어, 핸들러클래스풀네임>
 			
 			// 프로퍼티 안에 내용을 보려면
-			System.out.println("프로퍼티의 내용");
+			//System.out.println("프로퍼티의 내용");
 			
 			// 프로터티 파일 내용을 전부 읽어옴
-			prop.list(System.out);
+			//prop.list(System.out);
 			
 		}catch (IOException e) {
 			e.printStackTrace();
@@ -99,7 +99,7 @@ public class MainControllerServlet extends HttpServlet {
 				
 		}
 		
-		System.out.println("필터실행 아직");
+		//System.out.println("필터실행 아직");
 	}
 	
 
@@ -109,7 +109,7 @@ public class MainControllerServlet extends HttpServlet {
 		// 이때 Filter가 실행된다
 		private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-			System.out.println("이 메소드부터 필터실행");
+			//System.out.println("이 메소드부터 필터실행");
 			
 			// 명령을 command 파라미터로 받고
 			// String command = req.getRequestURI();
@@ -117,13 +117,13 @@ public class MainControllerServlet extends HttpServlet {
 			String command = req.getRequestURI();
 			
 			
-			System.out.println("command : " + command);
+			//System.out.println("command : " + command);
 			// /RentalWebPage/command 로 반환을 하는데!!
 			// 이 부분으로만 각각의 명령을 처리하게 바꾸면 된다
 			// 즉!! URL부분을 각각의 명령에 따라 변경하면됨!
 			
-			System.out.println("contextPath : " + req.getContextPath());
-			// /RentalWebPage 이부분
+			//System.out.println("contextPath : " + req.getContextPath());
+			//RentalWebPage 이부분
 			
 			
 			
@@ -139,7 +139,7 @@ public class MainControllerServlet extends HttpServlet {
 				// charAt(인덱스) → 해당 인덱스의 문자! 를 반환
 			}
 			
-			System.out.println("수정 후 command : " + command);
+			//System.out.println("수정 후 command : " + command);
 			
 			
 			

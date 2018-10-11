@@ -1,7 +1,6 @@
 package login;
 
 import java.io.IOException;
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
@@ -9,8 +8,6 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.UserDao;
-import join.User;
 import main.exception.LoginFailException;
 import main.handler.CommandHandler;
 
@@ -118,7 +115,7 @@ public class LoginHandler implements CommandHandler{
 		
 		}catch(LoginFailException e) {
 			
-			System.out.println(e.getMessage());
+			//System.out.println(e.getMessage());
 			errors.put("idOrPwNotMatch", true);
 			return FORM_VIEW;
 			

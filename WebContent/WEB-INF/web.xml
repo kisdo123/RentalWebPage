@@ -63,7 +63,7 @@
 		<url-pattern>/calendar</url-pattern>
 		<url-pattern>/rentinquiry</url-pattern>
 		<url-pattern>/delete</url-pattern>
-		</servlet-mapping>
+	</servlet-mapping>
 
 
 

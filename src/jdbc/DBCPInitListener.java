@@ -44,12 +44,11 @@ public class DBCPInitListener implements ServletContextListener {
 		String configFile = sc.getInitParameter("poolConfigFile");
 		String poolConfigFile = sc.getRealPath(sc.getInitParameter("poolConfigFile"));
 		
-		System.out.println("configFile 주소 : " + configFile);
-		System.out.println("poolConfigFile 주소 : " + poolConfigFile);
-		
 		// 파일주소로 프로퍼티스 객체에 파일에 있는 데이터를 넣을 것임
 		Properties prop =  new Properties();
-		
+//		System.out.println("configFile 주소 : " + configFile);
+//		System.out.println("poolConfigFile 주소 : " + poolConfigFile);
+				
 		try {
 			// db.properties에 적어논 아이들의 key값을 읽어올 수 있도록 셋팅한다 
 			prop.load(new FileReader(poolConfigFile));

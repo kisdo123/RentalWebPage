@@ -37,7 +37,7 @@ public class CharacterEncodingFilter implements Filter {
 	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain)
 			throws IOException, ServletException {
 		
-		System.out.println("encoding filter start");
+		//System.out.println("encoding filter start");
 		
 		
 		
@@ -47,7 +47,7 @@ public class CharacterEncodingFilter implements Filter {
 		
 		
 		
-		System.out.println("encoding filter end");
+		//System.out.println("encoding filter end");
 	}
 
 	

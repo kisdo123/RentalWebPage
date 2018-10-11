@@ -21,14 +21,17 @@ public class RendDeleteService {
 
 		try (Connection conn = ConnectionProvider.getConnection()) {
 			try {
+				//트렌젝션 사용을위해 autocommit을 막음
 				conn.setAutoCommit(false);
 				RentInquiry rentInquiry = calendarDao.select(conn, userId);
+				
+				//대실 신청건이 존재하지않으면 화면반환
 				if(rentInquiry == null) {
 					conn.rollback();
 					throw new DuplicationException("대실신청건이 존재하지않습니다.");
 				}
 				
-				
+				//쿼리 실행
 				calendarDao.delete(conn, userId);
 				conn.commit();
 			} catch (SQLException e) {
