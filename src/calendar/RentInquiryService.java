@@ -16,15 +16,11 @@ public class RentInquiryService {
 		return instance;
 	}
 
-	public void select(int userId) {
+	public RentInquiry select(int userId) throws SQLException {
 		CalendarDao calendarDao = CalendarDao.getInstance();
 		try(Connection conn = ConnectionProvider.getConnection()){
-			calendarDao.select(conn, userId);
-			if(userId == 0) {
-				throw new RuntimeException("입력이 없습니다.");
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
+			RentInquiry rentInquiry = calendarDao.select(conn, userId);
+			return rentInquiry;
 		}
 	}
 }

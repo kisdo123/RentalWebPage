@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import login.LoginUser;
+import main.exception.DuplicationException;
 import main.exception.InvalidPasswordException;
 import main.exception.UserNotFoundException;
 import main.handler.CommandHandler;
@@ -107,6 +108,8 @@ public class CalendarHandler implements CommandHandler {
 		} catch (UserNotFoundException e) {
 			e.printStackTrace();
 			return null;
+		} catch (DuplicationException e) {
+			return "/WEB-INF/fail/rentApplicationFail.jsp";
 		}
 
 	}

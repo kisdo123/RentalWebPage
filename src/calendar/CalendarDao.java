@@ -26,6 +26,8 @@ public class CalendarDao {
 			pst.executeUpdate();
 		}
 	}
+	
+	//select 쿼리 rent,room,user테이블 join
 	public RentInquiry select(Connection conn, int userId) throws SQLException {
 			String sql ="select rent.rentId, rent.userId, user.name, rent.roomId, room.roomName, rent.rentDate, rent.rentTime from rent, room, user where rent.roomId = room.roomId and rent.userId = user.userId and rent.userId = ?";
 					    
@@ -36,11 +38,18 @@ public class CalendarDao {
 					if(rs.next()) {
 						rentInquiry = rentInquiryElement(rs);
 					}
-					System.out.println(rentInquiry);
 					return rentInquiry;
 				}
 			}
 		}
+	
+	public int delete(Connection conn, int userId) throws SQLException{
+		String sql = "delete from rent where userId = ? ";
+		try(PreparedStatement pst = conn.prepareStatement(sql)){
+			pst.setInt(1, userId);
+			return pst.executeUpdate();
+		}
+	}
 
 	private RentInquiry rentInquiryElement(ResultSet rs) throws SQLException{
 		RentInquiry rentInquiry = new RentInquiry(rs.getInt("rentId"), rs.getInt("userId"), rs.getString("name"), rs.getInt("roomId"), rs.getString("roomName"), rs.getString("rentDate"), rs.getString("rentTime"));

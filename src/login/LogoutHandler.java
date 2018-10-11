@@ -22,7 +22,7 @@ public class LogoutHandler implements CommandHandler{
 		}
 				
 		// 리다이렉트로 돌려줌
-		resp.sendRedirect(req.getContextPath() + "/index.jsp");
+		resp.sendRedirect(req.getContextPath() + "/rentInquiry.jsp");
 		return null;
 	}
 	
