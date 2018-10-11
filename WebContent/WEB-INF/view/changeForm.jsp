@@ -40,7 +40,7 @@
 	<c:if test="${errors.team }">소속을 입력하세요</c:if>
 </p>
 <p>
-	생년월일 : <input type="text" name="team" value="${loginUser.birth }" placeholder="생년월일">
+	생년월일 : <input type="text" name="team" value="${loginUser.birth }" placeholder="생년월일" readonly>
 	<c:if test="${errors.birth }">소속을 입력하세요</c:if>
 </p>
 

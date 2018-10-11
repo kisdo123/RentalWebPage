@@ -109,14 +109,14 @@ public class DBCPInitListener implements ServletContextListener {
 		
 		// DB접속 정보를 String 으로 받아봄
 		// 유지보수를 쉽게하기 위해서
-		String connectionUri = prop.getProperty("jdbcUri"); // jdbc:mysql://localhost:3306/koitt?serverTimezone=Asia/Seoul&useUnicode=true&characterEncoding=utf8
+		String connectionUri = prop.getProperty("jdbcUri"); // jdbc:mysql://localhost:3306/rentproject?serverTimezone=Asia/Seoul&useUnicode=true&characterEncoding=utf8
 		String user = prop.getProperty("dbUser"); // root
 		String password = prop.getProperty("dbPwd"); // mysql
 		
 
 
 		String poolingDriver = prop.getProperty("poolingDriver"); // org.apache.commons.dbcp2.PoolingDriver
-		String poolName = prop.getProperty("poolName"); // koitt
+		String poolName = prop.getProperty("poolName"); // rentproject
 		
 	
 		

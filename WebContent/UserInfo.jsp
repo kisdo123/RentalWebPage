@@ -15,8 +15,6 @@
         	location.href="index.jsp";
     	}else if(val == "2"){
         	location.href="change";
-    	}else if(val == "3"){
-        	location.href="index.jsp";
     	}
 	}
 
@@ -69,8 +67,6 @@
         
         <input type="button" value="뒤로" onclick="changeForm(1)">
         <input type="button" value="회원정보 변경" onclick="changeForm(2)">
-        <input type="button" value="회원탈퇴" onclick="changeForm(3)">
-
 
 </body>
 </html>
