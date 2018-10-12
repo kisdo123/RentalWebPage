@@ -36,7 +36,7 @@
 	<filter-mapping>
 		<filter-name>LoginCheckFilter</filter-name>
 		<!-- 비밀번호를 변경할 때 로그인을 확인하는 필터 사용 -->
-		<url-pattern>/changePw</url-pattern>
+		<url-pattern>/change</url-pattern>
 		<url-pattern>/calendar</url-pattern>
 		<url-pattern>/rentinquiry</url-pattern>
 		<url-pattern>/delete</url-pattern>

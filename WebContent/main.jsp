@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%
+    String contentPage=request.getParameter("contentPage");
+    if(contentPage==null)
+        contentPage="/WEB-INF/view/firstPage.jsp";
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,41 +47,24 @@ body{
 
 #text {
 	background:white;
-	height: 500pt;
 }
-
-.btndiv{
-	float: left;
-	width: 33%;
-	margin: 0 auto;
-}
-.btn {
-	border: solid 2px #ccc; 
-	background-color: #5084C1;
-	color: black;
-	font-size:15pt;
-	font-weight: bolder;
-	width: 103%;
-	height: 50px;
-}
-
 
 </style>
 
 </head>
 <body>
-<div id="container">
-    <div id="header"><jsp:include page="/WEB-INF/view/loginIndex.jsp"/></div>
-	<div id="banner"> <h1>하 자 센 터</h1></div>
-	<div class="btndiv"><button class="btn" type="button">대관</button></div>
-	<div class="btndiv"><button class="btn" type="button">Q&A</button></div>
-	<div class="btndiv"><button class="btn"type="button">기타</button></div>
-	<div id="text">소개글 작성</div>
-	<div id="footer">
-		<br><br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;고유번호: 107-82-06446 | 대표: 황윤옥 <br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;주소: 서울특별시 영등포구 영신로 200<br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전화: 02-2677-9200 | 팩스: 02-2679-9300
+	<div id="container">
+	    <div id="header"><jsp:include page="/WEB-INF/view/loginIndex.jsp"/></div>
+		<div id="banner"> <h1>하 자 센 터</h1></div>
+		<div id="menu"><jsp:include page="/WEB-INF/view/menu.jsp"/></div>
+		<div id="text">
+			<div id="test"><jsp:include page="<%=contentPage%>" /></div>
+		</div>
+		<div id="footer">
+			<br><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;고유번호: 107-82-06446 | 대표: 황윤옥 <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;주소: 서울특별시 영등포구 영신로 200<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전화: 02-2677-9200 | 팩스: 02-2679-9300
 	</div>
 </div>
 </body>

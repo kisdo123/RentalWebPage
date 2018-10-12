@@ -198,120 +198,141 @@ function chkContinuity() {
 	}
 }
 </script>
+
+<style type="text/css">
+
+table{
+	width: 100%;
+}
+
+.element{
+	float: left;
+}
+
+#checkboxdiv{
+	width: 20%%;
+}
+
+#calendardiv{
+	width: 80%;
+}
+</style>
+
 </head>
 <body>
-<div>
-	<table border="1">
-		<tr>
-			<td width="225.9px" align="center">
-				<a href="calendar?month=<%=currMonth%>&year=<%=currYear%>&action=0">◀</a>
-			</td>
-			
-			<td width="340.9px"  align="center">
-				<b><%=cal.get(cal.YEAR)+"년 "+(cal.get(cal.MONTH)+1)+"월"%></b>
-			</td>
-			
-			<td width="225px" align="center">
-				<a href="calendar?month=<%=currMonth%>&year=<%=currYear%>&action=1">▶</a>
-			</td>
-		</tr>
-	</table>
-	
-	<table border="1">
-		<tr>
-			<td width="110" align="center">
-				<b>일</b>
-			</td>
+<div id="container">
+	<div class="element" id="calendardiv">
+		<table border="1">
+			<tr>
+				<td>
+					<a href="calendar?month=<%=currMonth%>&year=<%=currYear%>&action=0">◀</a>
+				</td>
+				
+				<td>
+					<b><%=cal.get(cal.YEAR)+"년 "+(cal.get(cal.MONTH)+1)+"월"%></b>
+				</td>
+				
+				<td>
+					<a href="calendar?month=<%=currMonth%>&year=<%=currYear%>&action=1">▶</a>
+				</td>
+			</tr>
+		</table>
 		
-			<td width="110" align="center">
-				<b>월</b>
-			</td>
+		<table border="1">
+			<tr>
+				<td>
+					<b>일</b>
+				</td>
+			
+				<td>
+					<b>월</b>
+				</td>
+						
+				<td>
+					<b>화</b>
+				</td>
 					
-			<td width="110" align="center">
-				<b>화</b>
-			</td>
+				<td>
+					<b>수</b>
+				</td>
 				
-			<td width="110" align="center">
-				<b>수</b>
-			</td>
-			
-			<td width="110" align="center">	
-				<b>목</b>
-			</td>
-
-			<td width="110" align="center">				
-				<b>금</b>
-			</td>
-			
-			<td width="110" align="center">
-				<b>토</b>
-			</td>
-		</tr>
-<%
-	int currDay;
-	String todayColor;
-	int count = 1;
-	int dispDay = 1;
+				<td>	
+					<b>목</b>
+				</td>
 	
-	for (int w = 1; w < 7; w++){
-%>
-		<tr>
-<%
-  		for (int d = 1; d < 8; d++){
-			if (! (count >= cal.get(c.DAY_OF_WEEK))){ 
-%>
-			<td width="110" height="70" valign="top" align="left">&nbsp;</td>
-<%
-				count += 1;
-			} else{
-				if (isDate ( currMonth + 1, dispDay, currYear) ) {// use the isDate method
-					if ( dispDay == c.get(c.DAY_OF_MONTH) && c.get(c.MONTH) == cal.get(cal.MONTH) && c.get(c.YEAR) == cal.get(cal.YEAR)) {// Here we check to see if the current day is today
-							todayColor = "#6C7EAA";
-						}else{
-							todayColor = "#ffffff";
-						}
-%> 
-				<td bgcolor="<%=todayColor%>" width="110" align="left" height="70" valign="top"><%=dispDay + "일"%><br>
-				<label>
-					<font size="1"><input type="radio" name="room" value="1" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,1)">합주실(소)<br></font>
-				</label>
+				<td>				
+					<b>금</b>
+				</td>
 				
-				<label>
-					<font size="1"><input type="radio" name="room" value="2" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,2)">합주실(대)<br></font>
-				</label>
-				
-				<label>
-					<font size="1"><input type="radio" name="room" value="3" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,3)">커뮤니티스튜디오<br></font>
-				</label>
-				
-				<label>
-					<font size="1"><input type="radio" name="room" value="4" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,4)">999홀<br></font>
-				</label>
-				
-				<label>
-					<font size="1"><input type="radio" name="room" value="5" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,5)">허브홀<br></font>
-				</label>					
-			</td>
-<%
+				<td>
+					<b>토</b>
+				</td>
+			</tr>
+	<%
+		int currDay;
+		String todayColor;
+		int count = 1;
+		int dispDay = 1;
+		
+		for (int w = 1; w < 7; w++){
+	%>
+			<tr>
+	<%
+	  		for (int d = 1; d < 8; d++){
+				if (! (count >= cal.get(c.DAY_OF_WEEK))){ 
+	%>
+				<td>&nbsp;</td>
+	<%
 					count += 1;
-					dispDay += 1;
-				}else{
-%>
-			<td width="110" align="left" height="70" valign="top">&nbsp;</td>
-<%
-				} 
-			}
-
-       } 
-%>
-		</tr>
-<% 
-	}
-%>
-	</table>
+				} else{
+					if (isDate ( currMonth + 1, dispDay, currYear) ) {// use the isDate method
+						if ( dispDay == c.get(c.DAY_OF_MONTH) && c.get(c.MONTH) == cal.get(cal.MONTH) && c.get(c.YEAR) == cal.get(cal.YEAR)) {// Here we check to see if the current day is today
+								todayColor = "#6C7EAA";
+							}else{
+								todayColor = "#ffffff";
+							}
+	%> 
+					<td bgcolor="<%=todayColor%>"><%=dispDay + "일"%><br>
+					<label>
+						<font size="1"><input type="radio" name="room" value="1" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,1)">합주실(소)<br></font>
+					</label>
+					
+					<label>
+						<font size="1"><input type="radio" name="room" value="2" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,2)">합주실(대)<br></font>
+					</label>
+					
+					<label>
+						<font size="1"><input type="radio" name="room" value="3" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,3)">커뮤니티스튜디오<br></font>
+					</label>
+					
+					<label>
+						<font size="1"><input type="radio" name="room" value="4" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,4)">999홀<br></font>
+					</label>
+					
+					<label>
+						<font size="1"><input type="radio" name="room" value="5" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,5)">허브홀<br></font>
+					</label>					
+				</td>
+	<%
+						count += 1;
+						dispDay += 1;
+					}else{
+	%>
+				<td>&nbsp;</td>
+	<%
+					} 
+				}
+	
+	       } 
+	%>
+			</tr>
+	<% 
+		}
+	%>
+		</table>
 	</div>
-	<div>
-	<form action="calendar" method="post" name="calendar">
+	<div class="element" id="checkboxdiv">
+		<form action="calendar" method="post" name="calendar">
 			<input type="text" name="dateroom" id="dateroom" readonly><br>
 			
 			<input type="hidden" name="roomId" id="roomId" readonly>
@@ -328,7 +349,8 @@ function chkContinuity() {
 			<input type="checkbox" name="time" id="chk9" value="9" onclick="checkLimit(this)" >PM 05:00 ~ PM 06:00<br>
 			<button type="button"  onclick="chkContinuity()" >대관 신청</button>
 			<input type="reset" name="reset" onclick="resetCount()" value="선택 취소">
-	</form>
+		</form>
 	</div>
+</div>
 </body>
 </html>
