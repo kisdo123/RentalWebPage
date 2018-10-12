@@ -76,6 +76,6 @@
 	<%= username %>님 <br>
 	<%= roomdate + "<br>" + realTime %>
 	대관 신청되었습니다.<br>
-	<a href="main.jsp">[메인화면으로 돌아가기]</a>
+<button type="button" class="join" onclick="location.href='main' ">메인으로</button>
 </body>
 </html>

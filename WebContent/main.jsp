@@ -17,6 +17,20 @@ body{
 	background:#ccc;
 	margin: 0 auto;
 }
+.firstbtn{
+	width:150px;
+	height:150px;
+	border:1px solid black;
+	border-radius:75px;
+	-moz-border-radius : 75px;
+	-webkit-border-radius : 75px;
+	-ms-border-radius :75px;
+	-khtml-border-radius : 75px;
+	-o-border-radius :75px;
+	background-color: black;
+	color: white;
+	
+}
 
 #container{
 	width: 80%;
@@ -46,7 +60,7 @@ body{
 
 #text {
 	background:white;
-	height: 500px;
+	height: auto;
 }
 
 .btn {

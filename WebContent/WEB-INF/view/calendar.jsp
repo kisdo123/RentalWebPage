@@ -198,12 +198,128 @@ function chkContinuity() {
 	}
 }
 </script>
+<style type="text/css">
+body{
+	text-align: center;
+	background:#ccc;
+	margin: 0 auto;
+}
 
+#calendar{
+	width: 80%;
+	overflow:auto;
+	margin: 0 auto;
+	background-color: white;
+}
+
+table{
+	width: 100%;
+	background-color: black;
+	color: white;
+}
+
+#title{
+	font-size:30pt;
+	font-weight:bolder;
+	text-align: center;
+	margin: 0 auto;
+	height: 50pt;
+	width: 80%;
+	background-color: rgb(237,223,185);
+}
+
+#calfooter{
+ 	bottom:0;
+ 	width:80%;
+ 	margin: 0 auto;
+    height:70px;
+    background-color: rgb(237,223,185);
+}
+
+#calendardiv {
+	width: 79%;
+	border: 1px solid black;
+	border-right-color: black;
+	border-left: none;
+	border-bottom: none;
+	border-top: none;
+}
+
+#checkboxdiv{
+	text-align:left;
+	width: 20%;
+	margin-top: 10%;
+}
+
+.element{
+	float: left;
+}
+
+.subreset{
+	width : 45%;
+	height : 30pt;
+	background-color: black;
+	color: white;
+	font-size: 20px;
+	margin-top: 10px;
+	text-align: center;
+}
+
+#room{
+	text-align: left;
+}
+
+#movemonth{
+	height: 30pt;
+	border: 1px solid white;
+	border-collapse: collapse;
+	border-bottom: none;
+}
+
+#day{
+	border: 1px solid white;
+	border-collapse: collapse;
+	border-bottom: none;
+}
+
+ #dateroom{
+ 	width: 103%;
+ 	height: 30pt;
+ 	font-size: 15pt;
+ 	font-weight: bold;
+ 	border: 1px solid black;
+ 	border-left: none;
+ 	border-right: none;
+ }
+ 
+ input[type="checkbox"]{
+ 	transform: scale(1.5);
+ 	margin-left: 10px;
+ }
+
+
+a:link { 
+	color: white;
+	text-decoration: none;
+	}
+	
+a:visited { 
+	color: white; 	
+	text-decoration: none;
+	}
+	
+a:hover { 
+	color: white;
+ 	text-decoration: none;
+ }
+ 
+</style>
 </head>
 <body>
-<div id="container">
+<div id="title">대관신청</div>
+<div id="calendar">
 	<div class="element" id="calendardiv">
-		<table border="1">
+		<table border="1" id="movemonth">
 			<tr>
 				<td>
 					<a href="calendar?month=<%=currMonth%>&year=<%=currYear%>&action=0">◀</a>
@@ -213,13 +329,13 @@ function chkContinuity() {
 					<b><%=cal.get(cal.YEAR)+"년 "+(cal.get(cal.MONTH)+1)+"월"%></b>
 				</td>
 				
-				<td>
+				<td >
 					<a href="calendar?month=<%=currMonth%>&year=<%=currYear%>&action=1">▶</a>
 				</td>
 			</tr>
 		</table>
 		
-		<table border="1">
+		<table border="1" id="day">
 			<tr>
 				<td>
 					<b>일</b>
@@ -252,6 +368,7 @@ function chkContinuity() {
 	<%
 		int currDay;
 		String todayColor;
+		String fontColor;
 		int count = 1;
 		int dispDay = 1;
 		
@@ -268,30 +385,32 @@ function chkContinuity() {
 				} else{
 					if (isDate ( currMonth + 1, dispDay, currYear) ) {// use the isDate method
 						if ( dispDay == c.get(c.DAY_OF_MONTH) && c.get(c.MONTH) == cal.get(cal.MONTH) && c.get(c.YEAR) == cal.get(cal.YEAR)) {// Here we check to see if the current day is today
-								todayColor = "#6C7EAA";
-							}else{
 								todayColor = "#ffffff";
+								fontColor = "#000000";
+							}else{
+								todayColor = "#000000";
+								fontColor = "#ffffff";
 							}
 	%> 
-					<td bgcolor="<%=todayColor%>"><%=dispDay + "일"%><br>
+					<td id="room" style="color:<%=fontColor%>" bgcolor="<%=todayColor%>"><%=dispDay + "일"%><br>
 					<label>
-						<font size="1"><input type="radio" name="room" value="1" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,1)">합주실(소)<br></font>
+						<font  size="2"><input type="radio" name="room" value="1" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,1)">합주실(소)<br></font>
 					</label>
 					
 					<label>
-						<font size="1"><input type="radio" name="room" value="2" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,2)">합주실(대)<br></font>
+						<font size="2"><input type="radio" name="room" value="2" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,2)">합주실(대)<br></font>
 					</label>
 					
 					<label>
-						<font size="1"><input type="radio" name="room" value="3" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,3)">커뮤니티스튜디오<br></font>
+						<font size="2"><input type="radio" name="room" value="3" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,3)">커뮤니티 스튜디오<br></font>
 					</label>
 					
 					<label>
-						<font size="1"><input type="radio" name="room" value="4" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,4)">999홀<br></font>
+						<font size="2"><input type="radio" name="room" value="4" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,4)">999홀<br></font>
 					</label>
 					
 					<label>
-						<font size="1"><input type="radio" name="room" value="5" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,5)">허브홀<br></font>
+						<font size="2"><input type="radio" name="room" value="5" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,5)">허브홀<br></font>
 					</label>					
 				</td>
 	<%
@@ -319,19 +438,20 @@ function chkContinuity() {
 			<input type="hidden" name="roomId" id="roomId" readonly>
 			<input type="hidden" name="date" id="date" readonly>
 			
-			<input type="checkbox" name="time" id="chk1" value="1" onclick="checkLimit(this)" >AM 09:00 ~ AM 10:00<br>
-			<input type="checkbox" name="time" id="chk2" value="2" onclick="checkLimit(this)" >AM 10:00 ~ AM 11:00<br>
-			<input type="checkbox" name="time" id="chk3" value="3" onclick="checkLimit(this)" >AM 11:00 ~ PM 12:00<br>
-			<input type="checkbox" name="time" id="chk4" value="4" onclick="checkLimit(this)" >PM 12:00 ~ PM 01:00<br>
-			<input type="checkbox" name="time" id="chk5" value="5" onclick="checkLimit(this)" >PM 01:00 ~ PM 02:00<br>
-			<input type="checkbox" name="time" id="chk6" value="6" onclick="checkLimit(this)" >PM 02:00 ~ PM 03:00<br>
-			<input type="checkbox" name="time" id="chk7" value="7" onclick="checkLimit(this)" >PM 03:00 ~ PM 04:00<br>
-			<input type="checkbox" name="time" id="chk8" value="8" onclick="checkLimit(this)" >PM 04:00 ~ PM 05:00<br>
-			<input type="checkbox" name="time" id="chk9" value="9" onclick="checkLimit(this)" >PM 05:00 ~ PM 06:00<br>
-			<button type="button"  onclick="chkContinuity()" >대관 신청</button>
-			<input type="reset" name="reset" onclick="resetCount()" value="선택 취소">
+			<label><font size="4"><input type="checkbox" name="time" id="chk1" value="1" onclick="checkLimit(this)" >AM 09:00 ~ AM 10:00<br></font></label>
+			<label><font size="4"><input type="checkbox" name="time" id="chk2" value="2" onclick="checkLimit(this)" >AM 10:00 ~ AM 11:00<br></font></label>
+			<label><font size="4"><input type="checkbox" name="time" id="chk3" value="3" onclick="checkLimit(this)" >AM 11:00 ~ PM 12:00<br></font></label>
+			<label><font size="4"><input type="checkbox" name="time" id="chk4" value="4" onclick="checkLimit(this)" >PM 12:00 ~ PM 01:00<br></font></label>
+			<label><font size="4"><input type="checkbox" name="time" id="chk5" value="5" onclick="checkLimit(this)" >PM 01:00 ~ PM 02:00<br></font></label>
+			<label><font size="4"><input type="checkbox" name="time" id="chk6" value="6" onclick="checkLimit(this)" >PM 02:00 ~ PM 03:00<br></font></label>
+			<label><font size="4"><input type="checkbox" name="time" id="chk7" value="7" onclick="checkLimit(this)" >PM 03:00 ~ PM 04:00<br></font></label>
+			<label><font size="4"><input type="checkbox" name="time" id="chk8" value="8" onclick="checkLimit(this)" >PM 04:00 ~ PM 05:00<br></font></label>
+			<label><font size="4"><input type="checkbox" name="time" id="chk9" value="9" onclick="checkLimit(this)" >PM 05:00 ~ PM 06:00<br></font></label>
+			<button class="subreset" type="button"  onclick="chkContinuity()" >대관 신청</button> &nbsp;
+			<input class="subreset" type="reset" name="reset" onclick="resetCount()" value="선택 취소">
 		</form>
 	</div>
 </div>
+<div id="calfooter"></div>
 </body>
 </html>

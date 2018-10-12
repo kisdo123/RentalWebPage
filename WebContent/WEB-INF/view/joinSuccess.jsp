@@ -11,7 +11,7 @@ ${param.name }님 회원 가입에 성공했습니다.
 
 <br>
 
-<a href="login">[로그인화면으로 돌아가기]</a>
+<button type="button" class="join" onclick="location.href='login' ">로그인</button>
 
 </body>
 </html>

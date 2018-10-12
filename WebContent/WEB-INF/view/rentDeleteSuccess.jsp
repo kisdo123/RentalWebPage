@@ -8,5 +8,6 @@
 </head>
 <body>
 삭제되었습니다.
+<button type="button" onclick="location.href='main.jsp' ">메인으로</button>
 </body>
 </html>

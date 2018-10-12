@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-심의중입니다.
-<br>
-<button type="button" onclick="location.href='main.jsp' ">메인으로</button>
+<div>
+<img src="image/place2.jpg" width="100%" height="100%">
+</div>
 </body>
 </html>

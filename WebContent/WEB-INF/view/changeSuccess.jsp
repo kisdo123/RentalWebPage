@@ -11,7 +11,7 @@
 
 <br>
 
-<a href="main.jsp">[메인화면으로 돌아가기]</a>
+<button type="button" onclick="location.href='main.jsp' ">메인으로</button>
 
 </body>
 </html>

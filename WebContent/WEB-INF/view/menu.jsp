@@ -9,7 +9,7 @@
 function menu(val){
 	switch (val) {
 	case 0:
-		location.href="main.jsp"
+		location.href="main.jsp?contentPage=/WEB-INF/view/firstPage.jsp";
 		break;
 	case 1:
 		location.href="main.jsp?contentPage=/WEB-INF/view/rentMenu.jsp";
