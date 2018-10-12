@@ -199,25 +199,6 @@ function chkContinuity() {
 }
 </script>
 
-<style type="text/css">
-
-table{
-	width: 100%;
-}
-
-.element{
-	float: left;
-}
-
-#checkboxdiv{
-	width: 20%%;
-}
-
-#calendardiv{
-	width: 80%;
-}
-</style>
-
 </head>
 <body>
 <div id="container">
@@ -331,7 +312,7 @@ table{
 	%>
 		</table>
 	</div>
-	<div class="element" id="checkboxdiv">
+	<div  class="element" id="checkboxdiv">
 		<form action="calendar" method="post" name="calendar">
 			<input type="text" name="dateroom" id="dateroom" readonly><br>
 			

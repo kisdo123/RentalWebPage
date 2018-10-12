@@ -8,14 +8,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import main.exception.DuplicationException;
 import main.handler.CommandHandler;
-import join.JoinRequest;
-import join.JoinService;
 
 // 사용자의 요청을 받아서 Form 화면을 보여줄지, 데이터로 화원가입을 시킬지 구분하여 처리
 public class JoinHandler implements CommandHandler{
 
 	// 회원가입 페이지 주소를 상수로 만듬
-	private static final String FORM_VIEW = "/WEB-INF/view/joinForm.jsp";
+	private static final String FORM_VIEW = "/WEB-INF/view/join.jsp";
 	
 	
 	// 사용자는 url board/join →

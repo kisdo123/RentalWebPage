@@ -12,10 +12,10 @@ function menu(val){
 		location.href="main.jsp"
 		break;
 	case 1:
-		location.href="main.jsp?contentPage=/WEB-INF/view/calendar.jsp";
+		location.href="main.jsp?contentPage=/WEB-INF/view/rentMenu.jsp";
 		break;
 	case 2:
-		//location.href="Q&A페이지";
+		location.href="main.jsp?contentPage=/WEB-INF/view/calendar.jsp";
 		break;
 	case 3:
 		location.href="main.jsp?contentPage=/WEB-INF/view/daumMap2.jsp";
@@ -25,36 +25,18 @@ function menu(val){
 
 </script>
 
-<style type="text/css">
-#home{
-	float: left;
-	width: 4%;
-	margin: 0 auto;
-}
-
-.btndiv{
-	float: left;
-	width: 32%;
-	margin: 0 auto;
-}
-
-.btn {
-	border: solid 2px #ccc; 
-	background-color: #5084C1;
-	color: black;
-	font-size:15pt;
-	font-weight: bolder;
-	width: 100%;
-	height: 50px;
-}
-</style>
 </head>
 <body>
-<div>
-	<div id="home"><button class="btn" onclick="menu(0)"><img src="image/home.png" style= "width: 45px; height: 45px;" /></button></div>
-	<div class="btndiv"><button class="btn" onclick="menu(1)">대관</button></div>
-	<div class="btndiv"><button class="btn" onclick="menu(2)">Q&A</button></div>
-	<div class="btndiv"><button class="btn" onclick="menu(3)">기타</button></div>
-</div>
+
+<table class="funcTab">
+		<tr>
+			<td class="home">
+				<button onclick="menu(0)"><img src="image/home.png" style= "width: 45px; height: 45px;" /></button>
+			</td>
+			<td class="func1"><button class="btn" onclick="menu(1)" >대관하기</button></td>
+			<td class="func2"><button class="btn" onclick="menu(2)">Q&A</button></td>
+			<td class="func3"><button class="btn" onclick="menu(3)">기타</button></td>
+		</tr>
+</table>
 </body>
 </html>
