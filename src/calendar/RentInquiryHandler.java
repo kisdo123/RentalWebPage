@@ -28,6 +28,5 @@ public class RentInquiryHandler implements CommandHandler {
 		} catch (DuplicationException e) {
 			return "/WEB-INF/fail/rentDeleteFail.jsp";
 		}
-
 	}
 }

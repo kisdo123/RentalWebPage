@@ -46,21 +46,13 @@ body{
 
 #text {
 	background:white;
-	height: 500pt;
+	height: 500px;
 }
 
-.btndiv{
-	float: left;
-	width: 80%;
-	margin: 0 auto;
-	padding: 0 auto;
-	border: 0px;
-}
 .btn {
 	font-size:1em;
 	background-color: black;
 	color: white;
-
 	font-weight: bolder;
 	width: 100%;
 	height: 50px;

@@ -15,7 +15,7 @@ function menu(val){
 		location.href="main.jsp?contentPage=/WEB-INF/view/rentMenu.jsp";
 		break;
 	case 2:
-		location.href="main.jsp?contentPage=/WEB-INF/view/calendar.jsp";
+		//location.href="main.jsp?contentPage=/WEB-INF/view/calendar.jsp";
 		break;
 	case 3:
 		location.href="main.jsp?contentPage=/WEB-INF/view/daumMap2.jsp";

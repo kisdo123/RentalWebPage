@@ -7,10 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<button>1</button>
-<button>2</button>
-<button>3</button>
-<button>4</button>
-<button>5</button>
+심의중입니다.
 </body>
 </html>
