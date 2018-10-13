@@ -40,6 +40,14 @@
 		<url-pattern>/calendar</url-pattern>
 		<url-pattern>/rentinquiry</url-pattern>
 		<url-pattern>/delete</url-pattern>
+		
+		
+		<url-pattern>/articlewrite</url-pattern>
+		<url-pattern>/articlemodify</url-pattern>
+		<url-pattern>/articledelete</url-pattern>
+		
+
+		
 	</filter-mapping>
 
 	<!-- 컨트롤러 서블릿 -->
@@ -63,6 +71,12 @@
 		<url-pattern>/calendar</url-pattern>
 		<url-pattern>/rentinquiry</url-pattern>
 		<url-pattern>/delete</url-pattern>
+		
+		<url-pattern>/articlewrite</url-pattern>
+		<url-pattern>/articlelist</url-pattern>
+		<url-pattern>/articleread</url-pattern>
+		<url-pattern>/articlemodify</url-pattern>
+		<url-pattern>/articledelete</url-pattern>
 	</servlet-mapping>
 
 
