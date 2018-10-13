@@ -48,29 +48,6 @@ articleContent - articleId, content  -->
 	
 	
 	
-	
-    <tr bgcolor="#F5F5F5">
-   
-                <td width="150">
-                    
-                </td>
-                <!-- 본문 작성-->
-                <td width="550">
-                    <div>
-                        <textarea name="comment_content" rows="4" cols="70" ></textarea>
-                    </div>
-                </td>
-                
-                <!-- 댓글 등록 버튼 -->
-                <td width="100">
-                
-                    <div id="btn" style="text-align:center;">
-                        <p><a href="#" onclick="writeCmt()">[댓글등록]</a></p>    
-                    </div>
-                </td>
-           
-    </tr>
-    
     
     
     
@@ -95,6 +72,30 @@ articleContent - articleId, content  -->
 
 
 
+
+<table>
+    <tr bgcolor="#F5F5F5">
+   
+                <td width="150">
+                    
+                </td>
+                <!-- 본문 작성-->
+                <td width="550">
+                    <div>
+                        <textarea name="comment_content" rows="4" cols="70" ></textarea>
+                    </div>
+                </td>
+                
+                <!-- 댓글 등록 버튼 -->
+                <td width="100">
+                
+                    <div id="btn" style="text-align:center;">
+                        <p><a href="#" onclick="writeCmt()">[댓글등록]</a></p>    
+                    </div>
+                </td>
+           
+    </tr>
+</table>
 
      
  
