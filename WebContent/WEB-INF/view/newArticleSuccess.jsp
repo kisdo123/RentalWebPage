@@ -12,6 +12,6 @@
 ${ctxPath = pageContext.request.contextPath ; '' }
 <a href="${ctxPath }/articlelist">[목록 보기]</a>
 <br>
-<%-- <a href="${ctxPath }/articleread?no=${newArticleNum}">[내용 보기]</a> --%>
+<a href="${ctxPath }/articleread?no=${newArticleNum}">[내용 보기]</a>
 </body>
 </html>
