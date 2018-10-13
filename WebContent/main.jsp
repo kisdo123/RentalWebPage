@@ -71,6 +71,7 @@ body{
 	width: 100%;
 	height: 50px;
 }
+	.home button{ background-color: black; }
 	.home{ background-color: white; }
 	.funcTab td{ border: 1px solid black;}
 	.funcTab{ border-collapse: collapse; width: 100%;}
