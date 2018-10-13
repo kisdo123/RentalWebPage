@@ -16,7 +16,7 @@
 </p>
 
 <p>
-	<textarea rows="5" cols="30" name="content" placeholder="내용">${param.content }</textarea>
+	<%-- <textarea rows="5" cols="30" name="content" placeholder="내용">${param.content }</textarea> --%>
 </p>
 
 <input type="submit" value="등록">
