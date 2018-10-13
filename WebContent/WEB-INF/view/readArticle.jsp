@@ -17,29 +17,68 @@ articleContent - articleId, content  -->
 
 <table border="1">
 	<tr>
-		<th>게시글 번호</th>
-		<td>${articleData.article.articleId }</td>	
+		<th width="200" height="50">게시글 번호</th>
+		<td colspan="3" width="600" align="center">${articleData.article.articleId }</td>	
 	</tr>
 
 	<tr>
-		<th>작성자 이름</th>
-		<td>${articleData.article.name }</td>	
+		<th width="200" height="50">작성자 이름</th>
+		<td colspan="3" width="600" align="center">${articleData.article.name }</td>	
 	</tr>
 	
 	<tr>
-		<th>제목</th>
-		<td>${articleData.article.title }</td>	
+		<th width="200" height="50">제목</th>
+		<td colspan="3" width="600" align="center">${articleData.article.title }</td>	
 	</tr>
 	
 	<tr>
-		<th>내용</th>
-		<td><u:pre value='${articleData.articleContent }'/></td>	
+		<th width="200" height="50">내용</th>
+		<td colspan="3" width="600" align="center"><u:pre value='${articleData.articleContent }'/></td>	
 	</tr>
 
+
+
+	
+
+
+
+
+
+
+	
+	
+	
+	
+    <tr bgcolor="#F5F5F5">
+   
+                <td width="150">
+                    
+                </td>
+                <!-- 본문 작성-->
+                <td width="550">
+                    <div>
+                        <textarea name="comment_content" rows="4" cols="70" ></textarea>
+                    </div>
+                </td>
+                
+                <!-- 댓글 등록 버튼 -->
+                <td width="100">
+                
+                    <div id="btn" style="text-align:center;">
+                        <p><a href="#" onclick="writeCmt()">[댓글등록]</a></p>    
+                    </div>
+                </td>
+           
+    </tr>
+    
+    
+    
+    
+          
 	<tr>
-		<td colspan="2">
+		<td colspan="3" height="50"  align="center">
 			<c:set var="pageNo" value="${empty param.pageNo ? '1' : param.pageNo }"/>
-			<a href="articlelist?pageNo=${pageNo }">[목록]</a>
+			<a href="articlelist?pageNo=${pageNo }">[목록 보기]</a>
 			
 			<c:if test="${loginUser.userId == articleData.article.userId }">
 				<a href="articlemodify?no=${articleData.article.articleId }">[게시글 수정]</a>
@@ -47,7 +86,52 @@ articleContent - articleId, content  -->
 			</c:if>
 		</td>
 	</tr>
+	
+	
 </table>
+
+
+
+
+
+
+
+     
+ 
+      
+           
+           
+            
+
+ 
+      
+    
+     
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
