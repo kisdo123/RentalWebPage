@@ -6,50 +6,34 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=96b8706698bbb616b540588b939a86bc"></script>
-	<style>
-	html, body {width:100%;height:100%;margin:0;padding:0;} 
-	.map_wrap {position:relative;overflow:hidden;width:100%;height:350px;}
-	.radius_border{border:1px solid #919191;border-radius:5px;}     
-	 
-	.custom_zoomcontrol {position:absolute;top:20px;left:10px;width:36px;height:80px;overflow:hidden;z-index:1;background-color:#f5f5f5;} 
-	.custom_zoomcontrol span {display:block;width:36px;height:40px;text-align:center;cursor:pointer;}     
-	.custom_zoomcontrol span img {width:15px;height:15px;padding:12px 0;border:none;}             
-	.custom_zoomcontrol span:first-child{border-bottom:1px solid #bfbfbf;}  
-	  
-	.label {margin-bottom: 96px;}
-	.label * {display: inline-block;vertical-align: top;}
-	.label .left {background: url("http://t1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_l.png") no-repeat;display: inline-block;height: 24px;overflow: hidden;vertical-align: top;width: 7px;}
-	.label .center {background: url(http://t1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_bg.png) repeat-x;display: inline-block;height: 24px;font-size: 12px;line-height: 24px;}
-	.label .right {background: url("http://t1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_r.png") -1px 0  no-repeat;display: inline-block;height: 24px;overflow: hidden;width: 6px;}
-	 
-	    .wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
-	    .wrap * {padding: 0;margin: 0;}
-	    .wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
-	    .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
-	    .info .title {padding: 5px 0 0 10px;height: 30px;background: #eee;border-bottom: 1px solid #ddd;font-size: 18px;font-weight: bold;}
-	    .info .close {position: absolute;top: 10px;right: 10px;color: #888;width: 17px;height: 17px;background: url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');}
-	    .info .close:hover {cursor: pointer;}
-	    .info .body {position: relative;overflow: hidden;}
-	    .info .desc {position: relative;margin: 13px 0 0 90px;height: 75px;}
-	    .desc .ellipsis {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
-	    .desc .jibun {font-size: 11px;color: #888;margin-top: -2px;}
-	    .info .img {position: absolute;top: 6px;left: 5px;width: 73px;height: 71px;border: 1px solid #ddd;color: #888;overflow: hidden;}
-	    .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
-	    .info .link {color: #5085BB;}       
-	</style>
 </head>
 <body>
-
-
-<div class="map_wrap">
+<h2 style="color: red">약도/연락처</h2>
+<div class="map_wrap" id="mapbody">
     <div id="map" style="width:500px;height:400px; position:relative; overflow:hidden;"></div> 
     <!-- 지도 확대, 축소 컨트롤 div 입니다 -->
     <div class="custom_zoomcontrol radius_border"> 
         <span onclick="zoomIn()"><img src="http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대"></span>  
         <span onclick="zoomOut()"><img src="http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>
     </div>
+    </div>
+<div class="map_wrap" id="map_wrap">
+서울특별시 영등포구 영신로 200 (영등포동 7가 57번지)<br>
+우편번호: 07244<br>	
+대표 전화 02-2677-9200<br>
+팩스 02-2679-9300<br>
+<hr>
+버스 이용시<br>
+- 지선버스 5616, 5714, 6514 )<br>
+- 간선버스 605, 661, 760 )<br>
+- 좌석버스 8000, 9030, 700 )<br>
+- 일반버스 5, 60, 60-3, 70-2, 88)<br>
+  (신화병원 버스정류장 하차 기준)<br>
+<hr>
+지하철 이용시<br>
+- 5호선 영등포시장역 1번 출구 도보 7분<br>
+- 2, 5호선 영등포구청역 4번 출구 도보 12분<br>
 </div>
-
 <script>
 		var container = document.getElementById('map');
 		var options = {

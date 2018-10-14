@@ -264,7 +264,7 @@ a {
 }
 
 h1 {
-    color: white;
+    color: #E8e2ae;
     position: absolute;
     left: 0;
     right: 0;
@@ -282,7 +282,7 @@ h1 {
 h1 strong {
 
     display: block;
-    color: white;
+    color: #E8e2ae;
     font-style: italic;
     padding-right: 0.4em;
     font-size: 0.9em;

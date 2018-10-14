@@ -15,7 +15,7 @@ function menu(val){
 		location.href="main.jsp?contentPage=/WEB-INF/view/rentMenu.jsp";
 		break;
 	case 2:
-		//location.href="main.jsp?contentPage=/WEB-INF/view/calendar.jsp";
+		location.href="articlelist";
 		break;
 	case 3:
 		location.href="main.jsp?contentPage=/WEB-INF/view/daumMap2.jsp";
@@ -35,7 +35,7 @@ function menu(val){
 			</td>
 			<td class="func1"><button class="btn" onclick="menu(1)" >대관하기</button></td>
 			<td class="func2"><button class="btn" onclick="menu(2)">Q&A</button></td>
-			<td class="func3"><button class="btn" onclick="menu(3)">기타</button></td>
+			<td class="func3"><button class="btn" onclick="menu(3)">찾아오시는 길</button></td>
 		</tr>
 </table>
 </body>

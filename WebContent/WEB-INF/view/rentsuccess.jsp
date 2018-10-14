@@ -18,6 +18,64 @@
 	};
 	
 </script>
+<style type="text/css">
+    body{
+    		width:80%;
+            margin: 0;
+            font-size: small;
+            text-align: center;
+            font-family:'Open Sans';
+        }       
+
+        input{
+            width: 300px;
+            height: 30px;
+        }
+
+
+        table, .info, .form{
+            border: 1px solid black;
+            border-collapse: collapse;
+
+        }
+
+        table{ border:0; }
+        th{ text-align: center; color: gray; font-size: 2.5em; }
+
+        .info{
+            width: 100px;
+            text-align: left;
+        }
+
+        .outer-container {
+            position : absolute;
+            display: table;
+            width: 100%;
+            height: 100%;
+            background: #ccc;
+        }
+
+        .inner-container {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .centered-content {
+            display: inline-block;
+            background: #fff;
+            padding : 20px;
+            border : 1px solid #000;
+        }
+        
+        .logo{ padding-bottom: 17px; }
+        .logbtn{ background-color: black; color: white; font-size: 0.9em; height: 35px; 
+                margin-top: 5px;}
+        .logtitle{ font-size: 0.9em; }
+        .cancel{ border-top: 1px solid black; font-size: small; padding-top: 10px; }
+
+</style>
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -73,9 +131,43 @@
 			}
 		}
 	%>
-	<%= username %>님 <br>
-	<%= roomdate + "<br>" + realTime %>
-	대관 신청되었습니다.<br>
-<button type="button" class="join" onclick="location.href='main' ">메인으로</button>
+	
+	<div class="outer-container">
+   <div class="inner-container">
+     <div class="centered-content">
+     
+    <table>
+        <tr>
+            <!-- 로그인 위에 이미지가 들어가는 자리 -->
+            <td class="logo" colspan="2"><img src="image/하자.png" width="180px"></td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                 대관 신청 완료
+            </th>
+        </tr>
+
+        <tr>
+            <td id="title" class="info">신청인</td>
+            <td class="form"><%= username %></td>
+        </tr>
+
+    <tr>
+        <td id="title" class="info">날짜 방이름</td>
+        <td class="form"><%= roomdate%></td>
+    </tr>
+    <tr>
+        <td id="title" class="info">신청 시간</td>
+        <td class="form"><%= realTime %></td>
+    </tr>
+        <tr>
+           <td colspan="2">
+           	<button type="button"  class="logbtn" onclick="location.href='main.jsp' ">메인으로</button>
+            </td>
+        </tr>
+        </table>
+        </div>
+    </div>  
+</div>  
 </body>
 </html>

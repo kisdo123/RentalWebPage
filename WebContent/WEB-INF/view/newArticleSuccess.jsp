@@ -1,17 +1,60 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>내용 작성 완료 화면</title>
+<title>게시글게시성공 화면</title>
+<link rel="stylesheet" href="rudolph.css">
+<style type="text/css">
+		input{
+			color: black;
+			background-color: beige;
+			width: 100px;
+			height: 30px;
+			font-size: 13px;
+			font-weight: bold;
+		}
+		h1 a{
+			font-size: 0.7em;
+		}
+</style>
 </head>
 <body>
-게시글이 등록되었습니다.
-<br>
-${ctxPath = pageContext.request.contextPath ; '' }
-<a href="${ctxPath }/articlelist">[목록 보기]</a>
-<br>
-<a href="${ctxPath }/articleread?no=${newArticleNum}">[내용 보기]</a>
+	<div class="rudolph">
+            <div class="antlers left"></div>
+            <div class="antlers right"></div>
+            <div class="ears left">
+                <div class="inner"></div>    
+            </div>
+            <div class="ears right">
+                <div class="inner"></div>    
+            </div>
+		    <div class="face">
+		        <div class="eyes left">
+		            <div class="pupil"></div>    
+		        </div>
+		        <div class="eyes right">
+		            <div class="pupil"></div>    
+		        </div>
+		    </div>
+		    <div class="chin">
+		        <div class="nose">
+		            <div class="inner"></div>
+		        </div>
+		    </div>
+		</div>
+		
+	<form action="articledelete" method="post">	
+	<h1>
+			<input type="hidden" name="no" value="${delReq.articleId }">
+		<strong>${ctxPath = pageContext.request.contextPath ; '' }</strong>
+		<a href="${ctxPath }/articlelist">[목록 보기]</a>
+
+		<a href="${ctxPath }/articleread?no=${newArticleNum}">[내용 보기]</a>
+
+		<!-- <button type="button" onclick="location.href='main.jsp' ">메인으로</button> -->
+	</h1>
+	</form>
+
 </body>
 </html>

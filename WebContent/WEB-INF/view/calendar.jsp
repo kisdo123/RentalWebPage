@@ -205,17 +205,17 @@ body{
 	margin: 0 auto;
 }
 
-#calendar{
+#container{
 	width: 80%;
 	overflow:auto;
 	margin: 0 auto;
-	background-color: white;
+	background-color: #FFD8D8;
 }
 
 table{
 	width: 100%;
-	background-color: black;
-	color: white;
+	background-color: white;
+	color: black;
 }
 
 #title{
@@ -238,11 +238,6 @@ table{
 
 #calendardiv {
 	width: 79%;
-	border: 1px solid black;
-	border-right-color: black;
-	border-left: none;
-	border-bottom: none;
-	border-top: none;
 }
 
 #checkboxdiv{
@@ -258,8 +253,9 @@ table{
 .subreset{
 	width : 45%;
 	height : 30pt;
-	background-color: black;
-	color: white;
+	background-color: white;
+	border: 1px solid red;
+	color: black;
 	font-size: 20px;
 	margin-top: 10px;
 	text-align: center;
@@ -271,23 +267,22 @@ table{
 
 #movemonth{
 	height: 30pt;
-	border: 1px solid white;
+	border: 1px solid red;
 	border-collapse: collapse;
 	border-bottom: none;
 }
 
 #day{
-	border: 1px solid white;
+	border: 1px solid red;
 	border-collapse: collapse;
-	border-bottom: none;
 }
 
  #dateroom{
- 	width: 103%;
+ 	width: 105%;
  	height: 30pt;
  	font-size: 15pt;
  	font-weight: bold;
- 	border: 1px solid black;
+ 	border: 1px solid red;
  	border-left: none;
  	border-right: none;
  }
@@ -299,17 +294,17 @@ table{
 
 
 a:link { 
-	color: white;
+	color: black;
 	text-decoration: none;
 	}
 	
 a:visited { 
-	color: white; 	
+	color: black; 	
 	text-decoration: none;
 	}
 	
 a:hover { 
-	color: white;
+	color: black;
  	text-decoration: none;
  }
  
@@ -317,7 +312,8 @@ a:hover {
 </head>
 <body>
 <div id="title">대관신청</div>
-<div id="calendar">
+
+<div id="container">
 	<div class="element" id="calendardiv">
 		<table border="1" id="movemonth">
 			<tr>
@@ -385,11 +381,11 @@ a:hover {
 				} else{
 					if (isDate ( currMonth + 1, dispDay, currYear) ) {// use the isDate method
 						if ( dispDay == c.get(c.DAY_OF_MONTH) && c.get(c.MONTH) == cal.get(cal.MONTH) && c.get(c.YEAR) == cal.get(cal.YEAR)) {// Here we check to see if the current day is today
-								todayColor = "#ffffff";
+								todayColor = "#FFD8D8";
 								fontColor = "#000000";
 							}else{
-								todayColor = "#000000";
-								fontColor = "#ffffff";
+								todayColor = "#ffffff";
+								fontColor = "#000000";
 							}
 	%> 
 					<td id="room" style="color:<%=fontColor%>" bgcolor="<%=todayColor%>"><%=dispDay + "일"%><br>
@@ -447,7 +443,7 @@ a:hover {
 			<label><font size="4"><input type="checkbox" name="time" id="chk7" value="7" onclick="checkLimit(this)" >PM 03:00 ~ PM 04:00<br></font></label>
 			<label><font size="4"><input type="checkbox" name="time" id="chk8" value="8" onclick="checkLimit(this)" >PM 04:00 ~ PM 05:00<br></font></label>
 			<label><font size="4"><input type="checkbox" name="time" id="chk9" value="9" onclick="checkLimit(this)" >PM 05:00 ~ PM 06:00<br></font></label>
-			<button class="subreset" type="button"  onclick="chkContinuity()" >대관 신청</button> &nbsp;
+			&nbsp;&nbsp;<button class="subreset" type="button"  onclick="chkContinuity()" >대관 신청</button> &nbsp;
 			<input class="subreset" type="reset" name="reset" onclick="resetCount()" value="선택 취소">
 		</form>
 	</div>

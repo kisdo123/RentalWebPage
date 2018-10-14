@@ -25,7 +25,7 @@ function changeIframeUrl(url){
 <div>
 	<div style="text-align: left">
 	<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;공간 대관 안내<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font size="10" color="red">공간 대관 안내<br></font>
 	<br>
 	<hr>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	대관공간 및 대관료 안내 문서를 읽어보시고, 아래의 '대관 신청하기' 버튼을 클릭하여 작성해 주시기 바랍니다.<br>
@@ -35,7 +35,7 @@ function changeIframeUrl(url){
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	대관신청은 행사일 기준 한 달 전부터만 가능합니다.<br>
 	<br>
 	<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	* 대관절차<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<font size="5" color="red">* 대관절차<br></font>
 	<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	1. 공간사용신청서 작성 : 하단 대관공간 및 대관료 안내 참고<br>
 	<br>
@@ -48,7 +48,7 @@ function changeIframeUrl(url){
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	5. 대관 : 사용약속 준수 (하단 하자와의 약속 참고)<br>
 	<br>
  	<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	* 이용수칙<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<font size="5" color="red">* 이용수칙<br></font>
 	<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	공간 이용시에는 하자와의 약속을 반드시 지켜주시기 바랍니다.<br>
 	<br>
@@ -71,7 +71,11 @@ function changeIframeUrl(url){
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  		 행사진행용 차량(최대 2대) 이외의 행사 방문객은 센터 근처의 공영주차장을 이용 바랍니다.<br>
 	<br><br><br>
 	</div>
-	<div><font size="10">공간정보</font><br><br><br>
+	<hr>
+	<font size="10" color="red">공간 대관 안내<br></font>
+	<img class="deviceimg" src="image/device1.png"><img class="deviceimg" src="image/device2.png"><img class="deviceimg" src="image/device3.png"><img class="deviceimg" src="image/device4.png">
+	<hr>
+	<div><font size="10" color="red">공간정보</font><br><br><br>
 		<input type="button" class="firstbtn" value='합주실(소)'  onclick = "changeIframeUrl('sRoomInfo.jsp')"></input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<input type="button" class="firstbtn" value='합주실(대)'  onclick = "changeIframeUrl('bRoomInfo.jsp')"></input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<input type="button" class="firstbtn" value='커뮤니티 스튜디오'  onclick = "changeIframeUrl('studioInfo.jsp')"></input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
