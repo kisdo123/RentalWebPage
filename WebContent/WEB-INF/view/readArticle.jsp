@@ -134,25 +134,10 @@
    	<br><br><br>
 </form>
 
-<table>
-	<!-- 댓글이 있을 때 보여줄 화면 -->
-	<c:forEach var="comment" items="${commentPage.commentList }">
-	
-		<c:if test="${articleData.article.articleId == comment.articleId}">
-		
-		<tr>
-			<td width="5%" align="center">${articleData.article.articleId }</td>
-			<td width="85%">${comment.comContent }</td>
-			<td width="10%" align="center">${comment.name }</td>
-		</tr>
-		
-		</c:if>
-	</c:forEach>
-</table>
 
+	<!--댓글이 있으면 댓글이 보이고 -->
+	<!--댓글작성자이면 수정 삭제버튼이 보임-->
 
-	<!--댓글작성자이면 보이는 화면 -->
-<c:if test="">
 <table>
 	<c:forEach var="comment" items="${commentPage.commentList }">
 	
@@ -162,13 +147,18 @@
 			<td width="5%" align="center">${articleData.article.articleId }</td>
 			<td width="71%">${comment.comContent }</td>
 			<td width="10%" align="center">${comment.name }</td>
+			
+			<c:if test="${comment.userId == loginUser.userId }">
+		
 			<td width="7%"> <button style="width: 100%; height: 25pt; background-color: #ccc;">수정</button></td>
 			<td width="7%"> <button style="width: 100%; height: 25pt; background-color: #ccc;">삭제</button></td>
+			
+			</c:if>
 		</tr>
 		</c:if>
 	</c:forEach>
 </table>
-</c:if>
+
 
 
 		</div>
