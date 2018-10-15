@@ -114,11 +114,16 @@
 <hr>
 
 <form action="commentwrite" method="post">
+	
+	게시글 번호<input type="text" name="articleId" value="${articleData.article.articleId }" readonly="readonly">
+	작성자 이름<input type="text" name="name" value="${articleData.article.name }" readonly="readonly">
+	
 	<table>
+	
 	    <tr bgcolor="#F5F5F5">
                 <!-- 본문 작성-->
                 <td colspan="2" class="comm">
-                    <textarea name="comContent" rows="10pt" cols="100%" >${paran.comContent }</textarea>
+                    <textarea name="comContent" rows="10pt" cols="100%" >${param.comContent }</textarea>
                    	작성자 <input type="text" style="width: 70px;" name="name" value="${articleData.article.name }" readonly="readonly">
 
                     <!-- 댓글 등록 버튼 --> 
