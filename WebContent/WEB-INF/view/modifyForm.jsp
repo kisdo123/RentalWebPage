@@ -83,6 +83,7 @@ table {
 </head>
 <body>
 	<form action="articlemodify" method="post">
+		<input type="hidden" name="no" value="${modReq.articleId }">
 		<div class="outer-container">
 			<div class="inner-container">
 				<div class="centered-content">

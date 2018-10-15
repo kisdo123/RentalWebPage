@@ -135,7 +135,7 @@
 			<td><br></td>
 		</tr>						
 		<tr>
-			<td colspan="3"><span class="cancel"><button type="button" onclick="location.href='main.jsp' " style="width: 70pt; height:25pt; background-color: white; color : black; border: solid 1px black; ">가입취소</button></span></td>
+			<td colspan="3"><span class="cancel"><button type="button" onclick="location.href='main.jsp' " style="width: 70pt; height:25pt; background-color: white; color : black; border: solid 1px black; ">변경 취소</button></span></td>
 		</tr>
 
 

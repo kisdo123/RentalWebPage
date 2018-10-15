@@ -65,7 +65,7 @@ private static final String FORM_VIEW = "/WEB-INF/view/articleReWriteForm.jsp";
 		req.setAttribute("comment", comment);
 		
 		
-		return "/WEB-INF/view/readArticle2.jsp";
+		return "/WEB-INF/view/readArticle.jsp";
 	}
 
 

@@ -23,6 +23,7 @@ public class ModifyArticleHandler implements CommandHandler{
 
 	// <a href="modify?no=${articleData.article.articleId }">[게시글 수정]</a>
 	// <a href="delete?no=${articleData.article.articleId }">[게시글 삭제]</a>
+	
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 
@@ -119,6 +120,7 @@ public class ModifyArticleHandler implements CommandHandler{
 			// modifySuccess.jsp(수정 성공화면)으로 전환
 			ModifyArticleService modifyArticleService = ModifyArticleService.getInstance();
 			modifyArticleService.modify(modReq);
+			
 			return "/WEB-INF/view/modifySuccess.jsp";
 			
 			

@@ -1,10 +1,6 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="u" tagdir="/WEB-INF/tags" %>
-
-
-
 
 
 <!DOCTYPE html>
@@ -79,7 +75,7 @@
 
 
 	
-	<!-- 게시글이 있을 때 보여줄 화면 -->
+	<!-- 댓글이 있을 때 보여줄 화면 -->
 	<c:forEach var="comment" items="${commentPage.commentList }">
 	
 	<c:if test="${articleData.article.articleId == comment.articleId}">

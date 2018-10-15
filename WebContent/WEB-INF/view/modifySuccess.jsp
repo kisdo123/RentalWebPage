@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <title>게시글 수정 성공 화면</title>
 <link rel="stylesheet" href="rudolph.css">
+
 <style type="text/css">
 		input{
 			color: black;
@@ -20,6 +21,7 @@
 </style>
 </head>
 <body>
+
 	<div class="rudolph">
             <div class="antlers left"></div>
             <div class="antlers right"></div>
@@ -44,16 +46,18 @@
 		    </div>
 		</div>
 		
-	<form action="articlemodify" method="post">	
+
+	
 	<h1>
-			<input type="hidden" name="no" value="${delReq.articleId }">
 		<strong>게시글을 수정했습니다.</strong>
+		<br>
+		${ctxPath = pageContext.request.contextPath; ''}
 		<a href="${ctxPath }/articlelist">[게시글 목록보기]</a>
 
 		<a href="${ctxPath }/articleread?no=${modReq.articleId}">[게시글 내용보기]</a>
 		<!-- <button type="button" onclick="location.href='main.jsp' ">메인으로</button> -->
 	</h1>
-	</form>
+
 
 </body>
 </html>
