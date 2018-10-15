@@ -131,9 +131,9 @@ body{
                 </div>
             </div>
         </div>
-
-        <h1 align="center"><img src="image/하자.png" width="300pt" height="70pt"></h1>
-
+        <h1>
+       	 <font color="black">하 자 센 터</font>
+        </h1>
 	</div>
 	
 	<div id="menu"><jsp:include page="/WEB-INF/view/menu.jsp"/></div>

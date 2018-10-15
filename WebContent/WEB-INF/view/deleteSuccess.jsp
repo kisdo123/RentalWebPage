@@ -51,7 +51,6 @@
 			<input type="hidden" name="no" value="${delReq.articleId }">
 		<strong>게시글이 삭제 되었습니다.</strong>
 			<input type="button" value="목록으로" onclick="location.href='articlelist' ">
-		<!-- <button type="button" onclick="location.href='main.jsp' ">ë©ì¸ì¼ë¡</button> -->
 	</h1>
 	</form>
 

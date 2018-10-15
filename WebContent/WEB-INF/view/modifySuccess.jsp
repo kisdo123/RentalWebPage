@@ -49,13 +49,13 @@
 
 	
 	<h1>
+		<input type="hidden" name="no" value="${modReq.articleId }">
 		<strong>게시글을 수정했습니다.</strong>
 		<br>
 		${ctxPath = pageContext.request.contextPath; ''}
 		<a href="${ctxPath }/articlelist">[게시글 목록보기]</a>
 
 		<a href="${ctxPath }/articleread?no=${modReq.articleId}">[게시글 내용보기]</a>
-		<!-- <button type="button" onclick="location.href='main.jsp' ">메인으로</button> -->
 	</h1>
 
 

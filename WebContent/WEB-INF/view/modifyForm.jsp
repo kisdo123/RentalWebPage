@@ -87,21 +87,18 @@ table {
 		<div class="outer-container">
 			<div class="inner-container">
 				<div class="centered-content">
-
+				<input type="hidden" name="no" value="${modReq.articleId }">
 					<table>
 						<tr>
-							<td class="cont">제목 &nbsp;&nbsp;&nbsp;<input type="text"
-								name="title" value="${modReq.title }"> <c:if
-									test="${errors.title }">제목을 입력하세요</c:if></td>
+							<td class="cont">
+								<input type="text" name="title" value="${modReq.title }">
+									<c:if test="${errors.title }">제목을 입력하세요</c:if>
+							</td>
 						</tr>
-						<tr>
-							<td>&nbsp;</td>
-						</tr>
-						
 
 						<tr>
-						<td>내용&nbsp;&nbsp;&nbsp;
-							<textarea rows="15" cols="90" name="content">${modReq.content }</textarea>
+							<td>
+								<textarea rows="15" cols="90" name="content">${modReq.content }</textarea>
 							</td>
 						</tr>
 						<tr>
@@ -117,8 +114,6 @@ table {
 		</div>
 
 	</form>
-
-
 
 </body>
 </html>
