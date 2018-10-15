@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ê²ìê¸ ì­ì </title>
+<title>게시글 삭제</title>
 <link rel="stylesheet" href="rudolph.css">
 <style type="text/css">
 		input{
