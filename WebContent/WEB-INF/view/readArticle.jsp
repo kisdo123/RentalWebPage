@@ -118,7 +118,7 @@
 	    <tr bgcolor="#F5F5F5">
                 <!-- 본문 작성-->
                 <td colspan="2" class="comm">
-                    <textarea name="comContent" rows="4" cols="70" >${paran.comContent }</textarea>
+                    <textarea name="comContent" rows="4" cols="85" >${paran.comContent }</textarea>
                     <!-- 댓글 등록 버튼 --> 
                 </td>
     	 </tr>
@@ -127,17 +127,21 @@
 </form>
 
 
+<table>
 	<!-- 댓글이 있을 때 보여줄 화면 -->
 	<c:forEach var="comment" items="${commentPage.commentList }">
 	
 		<c:if test="${articleData.article.articleId == comment.articleId}">
-	
-			${comment.name }<br>
-			${comment.comContent }<br><br>
-	
+		
+		<tr>
+			<td>${comment.name }</td>
+			<td>${comment.comContent }</td>
+		</tr>
+		
 		</c:if>
 	</c:forEach>
 	
+</table>
 
 
  

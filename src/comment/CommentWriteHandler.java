@@ -3,6 +3,7 @@ package comment;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import article.service.WriteArticleService;
 import login.LoginUser;
 import main.handler.CommandHandler;
 
@@ -62,10 +63,15 @@ private static final String FORM_VIEW = "/WEB-INF/view/articleReWriteForm.jsp";
 
 		Comment comment = commentWriteService.write(userId, articleId, comContent);
 
+		// 문제가 없다면
+		WriteArticleService articleService = WriteArticleService.getInstance();
+				
+
+
 		req.setAttribute("comment", comment);
 		
 		
-		return "/WEB-INF/view/readArticle.jsp";
+		return "/WEB-INF/view/commentWriteSuccess.jsp";
 	}
 
 

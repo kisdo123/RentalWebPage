@@ -44,9 +44,9 @@
 		    </div>
 		</div>
 		
-	<form action="articledelete" method="post">	
+	
 	<h1>
-			<input type="hidden" name="no" value="${delReq.articleId }">
+		
 		<strong>${ctxPath = pageContext.request.contextPath ; '' }</strong>
 		<a href="${ctxPath }/articlelist">[목록 보기]</a>
 
@@ -54,7 +54,7 @@
 
 		<!-- <button type="button" onclick="location.href='main.jsp' ">메인으로</button> -->
 	</h1>
-	</form>
+	
 
 </body>
 </html>
