@@ -22,6 +22,7 @@
 		}
 </style>
 </head>
+
 <body>
 	<div class="rudolph">
             <div class="antlers left"></div>
@@ -46,21 +47,16 @@
 		        </div>
 		    </div>
 		</div>
-		
-	
-
-
-
 </head>
 <body>
 
 	<h1>
-
+		댓글 작성 완료
+		<br>
 		<strong>${ctxPath = pageContext.request.contextPath ; '' }</strong>
 		<a href="${ctxPath }/articlelist">[목록 보기]</a>
 
 		<a href="${ctxPath }/articleread?no=${comment.articleId}">[내용 보기]</a>
-
 	</h1>
 
 </body>
