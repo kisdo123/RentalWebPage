@@ -23,13 +23,10 @@ public class CommentDao {
 	
 	
 	
-	
 
 	
-	
-	
 
-	// limit를 이용한 List를 가져오는 쿼리
+	// List를 가져오는 쿼리
 	public List<Comment> selectList(Connection conn, int articleId) throws SQLException{
 		
 		// 최신위주로 보기 위해 order by를 해주는데 내림차순으로 
@@ -42,11 +39,9 @@ public class CommentDao {
 			
 			pst.setInt(1, articleId);
 			
-			
 			List<Comment> commentList = new ArrayList<>();
 				
 			try(ResultSet rs = pst.executeQuery()){
-				
 				
 				while(rs.next()) {
 					
