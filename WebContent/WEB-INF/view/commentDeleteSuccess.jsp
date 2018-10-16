@@ -44,8 +44,12 @@
 		</div>
 
 	<h1>
-		<strong>삭제되었습니다.</strong>
-		<button type="button" onclick="location.href='articlelist' ">목록으로</button>
+		<strong>댓글이 삭제되었습니다.</strong>
+		<br>
+		<strong>${ctxPath = pageContext.request.contextPath ; '' }</strong>
+		
+		<a href="${ctxPath }/articlelist">[목록 보기]</a>
+
 	</h1>
 </body>
 </html>
