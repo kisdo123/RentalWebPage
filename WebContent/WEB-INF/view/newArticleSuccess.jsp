@@ -46,7 +46,8 @@
 		
 	
 	<h1>
-		
+		게시글 작성 완료
+		<br>
 		<strong>${ctxPath = pageContext.request.contextPath ; '' }</strong>
 		<a href="${ctxPath }/articlelist">[목록 보기]</a>
 
