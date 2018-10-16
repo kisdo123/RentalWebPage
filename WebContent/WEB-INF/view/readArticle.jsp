@@ -115,14 +115,6 @@
 
 	<input type="hidden" name="articleId" value="${articleData.article.articleId }" readonly="readonly">
 	<input type="hidden" name="name" value="${articleData.article.name }" readonly="readonly">
-
-	
-	게시글 번호<input type="text" name="articleId" value="${articleData.article.articleId }" readonly="readonly">
-	작성자 이름<input type="text" name="name" value="${articleData.article.name }" readonly="readonly">
-	댓글 번호<input type="text" name="name" value="${comment.comId }" readonly="readonly">
-	
-
-	
 	<table>
 	    <tr bgcolor="#F5F5F5">
                 <!-- 본문 작성-->
