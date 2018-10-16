@@ -12,12 +12,14 @@ public class RentDeleteHandler implements CommandHandler {
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 		try {
+			
 			//LoginUser에서 getUserId를 가져온다.
 			LoginUser loginUser = (LoginUser) req.getSession().getAttribute("loginUser");
 			int userId = loginUser.getUserId();
 
 			RendDeleteService rendDeleteService = RendDeleteService.getInstance();
 			rendDeleteService.delete(userId);
+			
 			//성공시 성공화면 반환
 			return "/WEB-INF/view/rentDeleteSuccess.jsp";
 
