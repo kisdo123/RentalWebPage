@@ -45,7 +45,6 @@ public class MainControllerServlet extends HttpServlet {
 	@Override
 	public void init() throws ServletException {
 		
-		
 		// 핸들러의 커맨드 명령어 정보가 있는 프로퍼티 파일을 프로퍼티 객체에 담기
 		Properties prop = new Properties();
 		
