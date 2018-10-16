@@ -47,6 +47,7 @@
 		<url-pattern>/articledelete</url-pattern>
 		
 		<url-pattern>/commentwrite</url-pattern>
+		<url-pattern>/commentdelete</url-pattern>
 		
 	</filter-mapping>
 
@@ -77,7 +78,7 @@
 		<url-pattern>/articleread</url-pattern>
 		<url-pattern>/articlemodify</url-pattern>
 		<url-pattern>/articledelete</url-pattern>
-		
+		<url-pattern>/commentdelete</url-pattern>
 		
 		<url-pattern>/commentwrite</url-pattern>
 	</servlet-mapping>

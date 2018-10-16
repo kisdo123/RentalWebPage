@@ -50,13 +50,7 @@
 
 	table{
 		width:100%;
-		text-align: left;
-		border:1px solid black;
-		border-collapse: collapse;
 	}
-	td{
-		border:1px solid black;
-		border-collapse: collapse;}
 
 	.artNun{ width: 95%; }
 	.artform{ width: 5%; }
@@ -64,7 +58,12 @@
 	.artCon{ height: 500px; border-top: none; vertical-align : top; width: 100%;}
 	.menu{ text-align: right; font-size: 0.8em; }
 	.comm{ font-size: 0.8em; }
-	
+	#commenttable{text-align: left; border:1px solid black; border-collapse: collapse;}
+	#commenttable td{border:1px solid black; border-collapse: collapse;}
+	#aritlcletable{text-align: left; border:1px solid black; border-collapse: collapse;}
+	#aritlcletable td{border:1px solid black; border-collapse: collapse;}
+	.innerTable{text-align: left; border:1px solid black; border-collapse: collapse;}
+	.innerTable{border-collapse: collapse;}
 	a:link {text-decoration: none; color: black;}
 	a:visited {text-decoration: none; color: black;}
 	a:active {text-decoration: none; color: black;}
@@ -82,22 +81,21 @@
    <div class="inner-container">
      <div class="centered-content">           
 
- <table>
- 
+ <table id="aritlcletable">
 	<tr>
-		<td class="artform">${articleData.article.articleId }</td>
-		<td>${articleData.article.title }</td>	
+		<td class="artform" align="center">${articleData.article.articleId }</td>
+		<td style="padding-left: 10px">${articleData.article.title }</td>	
 	</tr>
 
 	
 
 	<tr>
-		<td colspan="2" class="inner_td">${articleData.article.name }
+		<td colspan="2" class="inner_td" style="padding-left: 10px">${articleData.article.name }
 		</td>
 
 	</tr>
 	<tr>
-		<td colspan="2" class="artCon" style="padding-top: 1px;">
+		<td colspan="2" class="artCon" style="padding-top: 5px; padding-left: 10px">
 			<u:pre value='${articleData.articleContent }'/>
 		</td>	
 	</tr>
@@ -114,16 +112,15 @@
 <hr>
 
 <form action="commentwrite" method="post">
-	
-	게시글 번호<input type="text" name="articleId" value="${articleData.article.articleId }" readonly="readonly">
-	작성자 이름<input type="text" name="name" value="${articleData.article.name }" readonly="readonly">
+	<input type="hidden" name="articleId" value="${articleData.article.articleId }" readonly="readonly">
+	<input type="hidden" name="name" value="${articleData.article.name }" readonly="readonly">
 	
 	<table>
-	
 	    <tr bgcolor="#F5F5F5">
                 <!-- 본문 작성-->
                 <td colspan="2" class="comm">
-                    <textarea name="comContent" rows="10pt" cols="100%" >${param.comContent }</textarea>
+                	<input type="hidden" name="comId" value="${param.comId }">
+                	<textarea name="comContent" rows="10pt" cols="100%" >${param.comContent }</textarea>
                    	작성자 <input type="text" style="width: 70px;" name="name" value="${articleData.article.name }" readonly="readonly">
 
                     <!-- 댓글 등록 버튼 --> 
@@ -138,23 +135,42 @@
 	<!--댓글이 있으면 댓글이 보이고 -->
 	<!--댓글작성자이면 수정 삭제버튼이 보임-->
 
-<table>
+<table id="commenttable">
 	<c:forEach var="comment" items="${commentPage.commentList }">
-	
 		<c:if test="${articleData.article.articleId == comment.articleId}">
-		
-		<tr>
-			<td width="5%" align="center">${articleData.article.articleId }</td>
-			<td width="71%">${comment.comContent }</td>
-			<td width="10%" align="center">${comment.name }</td>
-			
-			<c:if test="${comment.userId == loginUser.userId }">
-		
-			<td width="7%"> <button style="width: 100%; height: 25pt; background-color: #ccc;">수정</button></td>
-			<td width="7%"> <button style="width: 100%; height: 25pt; background-color: #ccc;">삭제</button></td>
-			
-			</c:if>
-		</tr>
+			<c:choose>
+				<c:when test="${comment.userId == loginUser.userId }">
+				<table class="innerTable">
+					<tr>
+						<td style="width: 84%; padding-left: 10px">${comment.name }</td>
+						<td style="width: 16%;">
+							<div style="width:100%; text-align: center;">
+									<form action="commentdelete" method="post">
+											<input type="hidden" name="comId" value="${comment.comId }">
+											<input type="submit" value="삭제" style="background-color: #ccc; width: 48%;">
+									</form>
+							</div>
+						</td>
+					</tr>
+					
+					<tr>
+						<td colspan="2" width="95%" style="font-size: 25px; padding-left: 10px">${comment.comContent }</td>
+					</tr>
+				</table>
+				</c:when>
+				
+				<c:otherwise>
+				<table class="innerTable">
+					<tr>
+						<td colspan="2" style="padding-left: 10px">${comment.name }</td>
+					</tr>
+					
+					<tr>
+						<td colspan="2" style="font-size: 25px; padding-left: 10px">${comment.comContent }</td>
+					</tr>
+				</table>
+				</c:otherwise>
+			</c:choose>
 		</c:if>
 	</c:forEach>
 </table>

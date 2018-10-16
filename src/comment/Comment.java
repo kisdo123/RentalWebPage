@@ -1,13 +1,13 @@
 package comment;
 
 import java.time.LocalDateTime;
-import java.util.Map;
 
 public class Comment {
 
 	private int comId;
 	private int userId;
 	private int articleId;
+	private String title;
 
 	private String name;
 	
@@ -26,20 +26,12 @@ public class Comment {
 	
 	public Comment() {}
 
-	
-
-	
-	
 	public Comment(int userId, int articleId, String comContent) {
 		
 		this.userId = userId;
 		this.articleId = articleId;
 		this.comContent = comContent;
 	}
-
-
-
-
 
 	public Comment(int comId, int userId, int articleId, String name, String content, String comContent) {
 
@@ -52,15 +44,6 @@ public class Comment {
 		this.comContent = comContent;
 	
 	}
-
-
-
-
-
-
-
-
-
 
 
 	public int getComId() {
@@ -126,6 +109,12 @@ public class Comment {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
 	
 }

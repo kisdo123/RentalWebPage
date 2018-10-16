@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import comment.Comment;
+import comment.CommentDeleteRequest;
 
 public class CommentDao {
 
@@ -83,24 +84,17 @@ public class CommentDao {
 			// rs에 있는 내용을 담아서 던져준다
 			return comment;
 		}
+	private CommentDeleteRequest conDelArticle(ResultSet rs) throws SQLException {
+		
+		CommentDeleteRequest commentDeleteRequest = new CommentDeleteRequest(
+			rs.getInt("comId"),
+			rs.getInt("userId")
+			);
+			
+		// rs에 있는 내용을 담아서 던져준다
+		return commentDeleteRequest;
+	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	// 댓글 등록
 	public Comment insertComment(Connection conn, Comment comment) throws SQLException{
@@ -147,13 +141,28 @@ public class CommentDao {
 		}
 	}
 	
+	public int delete(Connection conn, int comId) throws SQLException{
+		String sql = "delete from comment where comId=?";
+		try(PreparedStatement pst = conn.prepareStatement(sql)){
+			pst.setInt(1, comId);
+			//System.out.println(comId);
+			return pst.executeUpdate();
+		}
+	}
 	
-	
-	
-	
-	
-	
+	public CommentDeleteRequest beforedeleteSelect(int comId, Connection conn) throws SQLException{
+		String sql = "select comment.comId, comment.userId, comment.articleId, content.content, comment.comContent FROM comment, user,  article,  content where comment.userId = user.userId and comment.articleId = article.articleId and article.articleId = content.articleId and comment.comId = ?";
+			try(PreparedStatement pst = conn.prepareStatement(sql)){
+				pst.setInt(1, comId);
+				try(ResultSet rs = pst.executeQuery()){
+					CommentDeleteRequest commentDeleteRequest = null;
+					if(rs.next()) {
+						commentDeleteRequest = conDelArticle(rs);
+						//System.out.println(commentDeleteRequest.getComId());
+					}
+					return commentDeleteRequest;
+				}
+		}
+	}
 
-	
-	
 }
