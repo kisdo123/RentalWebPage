@@ -8,9 +8,25 @@
 
 
 
-	<script type="text/javascript">
+<script type="text/javascript">
 	
 	function check(){
+		
+		if(!document.change.newPw.value){
+			alert("비밀번호를 입력하세요");
+			return false;
+		}
+		
+		if(!document.change.phone.value){
+			alert("연락처를 입력하세요");
+			return false;
+		}
+		
+		if(!document.change.team.value){
+			alert("소속을 입력하세요");
+			return false;
+		}
+		
 		
 		if(document.change.newPw.value == document.change.oldPw.value){
 			alert("기존 비밀번호와 같습니다");
@@ -18,7 +34,8 @@
 		}
 	
 	}
-	</script>
+	
+</script>
 	
 
 <style type="text/css">
@@ -126,7 +143,7 @@
 	</tr>
 	<tr>
 		<td class="info">생년월일</td>
-		<td><input type="text" name="team" value="${loginUser.birth }" placeholder="생년월일" readonly="readonly"></td>
+		<td><input type="text" name="birth" value="${loginUser.birth }" placeholder="생년월일" readonly="readonly"></td>
 	</tr>	
 
 
