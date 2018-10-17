@@ -6,6 +6,8 @@
 <title>로그인 | 하자공간</title>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
 <script type="text/javascript">
+
+
 	function check() {
 		if (!document.join.id.value) {
 			alert("ID를 입력하세요");

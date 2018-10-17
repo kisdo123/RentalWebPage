@@ -129,10 +129,10 @@
                 	<textarea name="comContent" rows="10pt" cols="100%" >${param.comContent }</textarea>
                    	작성자 <input type="text" style="width: 70px;" name="name" value="${articleData.article.name }" readonly="readonly">
 
-                    <!-- 댓글 등록 버튼 --> 
                 </td>
     	 </tr>
    	</table>
+                    <!-- 댓글 등록 버튼 --> 
    	<input type="submit" value="댓글 작성">
    	<br><br><br>
 </form>

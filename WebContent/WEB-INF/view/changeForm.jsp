@@ -5,15 +5,18 @@
 <head>
 <meta charset="UTF-8">
 <title>회원 정보 변경화면</title>
+
+
+
 	<script type="text/javascript">
 	
 	function check(){
 		
-		if(!document.change.newPw.value){
-			alert("새 비밀번호를 입력하세요");
+		if(document.change.newPw.value == document.change.oldPw.value){
+			alert("기존 비밀번호와 같습니다");
 			return false;
 		}
-		
+	
 	}
 	</script>
 	
@@ -102,13 +105,14 @@
 	
 	<tr>
 		<td class="info">현재 비밀번호</td>
-		<td><input type="text" name="oldPw" value="${loginUser.pw }"></td>
+		<td><input type="text" name="oldPw" value="${loginUser.pw }" readonly="readonly"></td>
 	</tr>
 
 	<tr>
 		
 		<td class="info">새 비밀번호</td>
-		<td><input type="password" name="newPw" placeholder="새 비밀번호" minlength="4" maxlength="12"></td>
+		<td><input type="password" name="newPw" placeholder="새 비밀번호" maxlength="12"></td>
+	
 	</tr>
 		
 	<tr>
@@ -126,20 +130,20 @@
 	</tr>	
 
 
-		<tr>
-			<td colspan="2">
-				<button class="logbtn" value="회원정보 변경">회원정보 변경</button>
-			</td>
-		</tr>
-		<tr>
-			<td><br></td>
-		</tr>						
-		<tr>
-			<td colspan="3"><span class="cancel"><button type="button" onclick="location.href='main.jsp' " style="width: 70pt; height:25pt; background-color: white; color : black; border: solid 1px black; ">변경 취소</button></span></td>
-		</tr>
+	<tr>
+		<td colspan="2">
+			<button class="logbtn" value="회원정보 변경">회원정보 변경</button>
+		</td>
+	</tr>
+	<tr>
+		<td><br></td>
+	</tr>						
+	<tr>
+		<td colspan="3"><span class="cancel"><button type="button" onclick="location.href='main.jsp' " style="width: 70pt; height:25pt; background-color: white; color : black; border: solid 1px black; ">변경 취소</button></span></td>
+	</tr>
 
 
-		</table>
+	</table>
 	
 
 		</div>
