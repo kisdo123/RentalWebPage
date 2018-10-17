@@ -6,6 +6,10 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="u" tagdir="/WEB-INF/tags" %>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -82,7 +86,7 @@
 	<c:forEach var="article" items="${articlePage.articleList }">
 		<tr>
 			<td class="conNo">${article.articleId }</td>
-			<td class="con1"><div align="left" style="padding-left: 10px"><a href="articleread?no=${article.articleId }&pageNo=${articlePage.currentPage }" >${article.title }</a></div></td>
+			<td class="con1"><div align="left" style="padding-left: 10px"><a href="articleread?no=${article.articleId }&pageNo=${articlePage.currentPage }" ><u:pre value='${article.title }'/></a></div></td>
 			<td class="con2">${article.name }</td>
 		
 			<%-- <td>${article.readCnt }</td> --%>

@@ -84,7 +84,7 @@
  <table id="aritlcletable">
 	<tr>
 		<td class="artform" align="center">${articleData.article.articleId }</td>
-		<td style="padding-left: 10px">${articleData.article.title }</td>	
+		<td style="padding-left: 10px"><u:pre value='${articleData.article.title }'/></td>	
 	</tr>
 
 	
@@ -119,7 +119,6 @@
 	
 	게시글 번호<input type="text" name="articleId" value="${articleData.article.articleId }" readonly="readonly">
 	작성자 이름<input type="text" name="name" value="${articleData.article.name }" readonly="readonly">
-	
 
 	
 	<table>
