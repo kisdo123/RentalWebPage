@@ -383,33 +383,83 @@ a:hover {
 						if ( dispDay == c.get(c.DAY_OF_MONTH) && c.get(c.MONTH) == cal.get(cal.MONTH) && c.get(c.YEAR) == cal.get(cal.YEAR)) {// Here we check to see if the current day is today
 								todayColor = "#FFD8D8";
 								fontColor = "#000000";
-							}else{
-								todayColor = "#ffffff";
+	%>
+								<td id="room" style="color:<%=fontColor%>" bgcolor="<%=todayColor%>"><%=dispDay + "일"%><br>
+								<label>
+									<font  size="2"><input type="radio" name="room" value="1" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,1)">합주실(소)<br></font>
+								</label>
+
+								<label>
+									<font size="2"><input type="radio" name="room" value="2" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,2)">합주실(대)<br></font>
+								</label>
+								
+								<label>
+									<font size="2"><input type="radio" name="room" value="3" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,3)">커뮤니티 스튜디오<br></font>
+								</label>
+								
+								<label>
+									<font size="2"><input type="radio" name="room" value="4" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,4)">999홀<br></font>
+								</label>
+								
+								<label>
+									<font size="2"><input type="radio" name="room" value="5" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,5)">허브홀<br></font>
+								</label>					
+								</td>
+<%	
+							}else if((dispDay > c.get(c.DAY_OF_MONTH) && c.get(c.MONTH) == cal.get(cal.MONTH) && c.get(c.YEAR) == cal.get(cal.YEAR))||c.get(c.MONTH) < cal.get(cal.MONTH) || c.get(c.YEAR) < cal.get(cal.YEAR)){
+								todayColor = "white";
 								fontColor = "#000000";
-							}
-	%> 
-					<td id="room" style="color:<%=fontColor%>" bgcolor="<%=todayColor%>"><%=dispDay + "일"%><br>
-					<label>
-						<font  size="2"><input type="radio" name="room" value="1" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,1)">합주실(소)<br></font>
-					</label>
-					
-					<label>
-						<font size="2"><input type="radio" name="room" value="2" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,2)">합주실(대)<br></font>
-					</label>
-					
-					<label>
-						<font size="2"><input type="radio" name="room" value="3" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,3)">커뮤니티 스튜디오<br></font>
-					</label>
-					
-					<label>
-						<font size="2"><input type="radio" name="room" value="4" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,4)">999홀<br></font>
-					</label>
-					
-					<label>
-						<font size="2"><input type="radio" name="room" value="5" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,5)">허브홀<br></font>
-					</label>					
-				</td>
-	<%
+%>
+		
+								<td id="room" style="color:<%=fontColor%>" bgcolor="<%=todayColor%>"><%=dispDay + "일"%><br>
+								<label>
+									<font  size="2"><input type="radio" name="room" value="1" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,1)">합주실(소)<br></font>
+								</label>
+								
+								<label>
+									<font size="2"><input type="radio" name="room" value="2" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,2)">합주실(대)<br></font>
+								</label>
+								
+								<label>
+									<font size="2"><input type="radio" name="room" value="3" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,3)">커뮤니티 스튜디오<br></font>
+								</label>
+								
+								<label>
+									<font size="2"><input type="radio" name="room" value="4" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,4)">999홀<br></font>
+								</label>
+								
+								<label>
+									<font size="2"><input type="radio" name="room" value="5" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,5)">허브홀<br></font>
+								</label>					
+								</td>
+<%
+							}else{
+								todayColor = "#ccc";
+								fontColor = "#000000";
+%> 
+							<td id="room" style="color:<%=fontColor%>" bgcolor="<%=todayColor%>"><%=dispDay + "일"%><br>
+							<label>
+								<font  size="2"><input type="hidden" name="room" value="1" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,1)"><br></font>
+							</label>
+							
+							<label>
+								<font size="2"><input type="hidden" name="room" value="2" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,2)"><br></font>
+							</label>
+							
+							<label>
+								<font size="2"><input type="hidden" name="room" value="3" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,3)"><br></font>
+							</label>
+							
+							<label>
+								<font size="2"><input type="hidden" name="room" value="4" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,4)"><br></font>
+							</label>
+							
+							<label>
+								<font size="2"><input type="hidden" name="room" value="5" onclick="dateroom(<%=currYear%>, <%=(currMonth+1)%>, <%=dispDay%>,5)"><br></font>
+							</label>					
+							</td>
+	<%				
+						}
 						count += 1;
 						dispDay += 1;
 					}else{
