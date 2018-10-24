@@ -75,8 +75,6 @@
 <body>
 
  
-           
-           
  <div class="outer-container">
    <div class="inner-container">
      <div class="centered-content">           
