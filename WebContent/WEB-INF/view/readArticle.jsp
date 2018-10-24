@@ -112,7 +112,7 @@
 <form action="commentwrite" method="post">
 
 	<input type="hidden" name="articleId" value="${articleData.article.articleId }" readonly="readonly">
-<<<<<<< HEAD
+
 	<input type="hidden" name="name" value="${articleData.article.name }" readonly="readonly">
 
 	
@@ -120,9 +120,9 @@
 	작성자 이름<input type="text" name="name" value="${articleData.article.name }" readonly="readonly">
 
 	
-=======
+
 	<input type="hidden" name="name" value="${articleData.article.name }" readonly="readonly">
->>>>>>> branch 'master' of https://github.com/kisdo123/RentalWebPage.git
+
 	<table>
 	    <tr bgcolor="#F5F5F5">
                 <!-- 본문 작성-->
