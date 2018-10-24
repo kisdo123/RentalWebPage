@@ -141,6 +141,7 @@
 		<td class="info">소속</td>
 		<td><input type="text" name="team" value="${loginUser.team }" placeholder="소속" maxlength="15"></td>
 	</tr>
+	
 	<tr>
 		<td class="info">생년월일</td>
 		<td><input type="text" name="birth" value="${loginUser.birth }" placeholder="생년월일" readonly="readonly"></td>
